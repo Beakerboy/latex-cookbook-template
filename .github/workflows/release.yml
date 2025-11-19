@@ -1,0 +1,92 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - "v*" # Trigger on tags like v1.0.0, v2024-11-16, etc.
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install LaTeX and LuaLaTeX dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-latex-extra texlive-fonts-extra texlive-luatex texlive-lang-french latexmk fonts-noto-color-emoji
+
+      - name: Build PDF
+        run: |
+          chmod +x build.sh
+          ./build.sh
+
+      - name: Get version info
+        id: version
+        run: |
+          # Extract tag name from the ref (e.g., refs/tags/v1.0.0 -> v1.0.0)
+          TAG_NAME=${GITHUB_REF#refs/tags/}
+          echo "tag=$TAG_NAME" >> $GITHUB_OUTPUT
+          echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+          # Format date for display
+          export TZ=America/Los_Angeles
+          echo "date=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_OUTPUT
+
+      - name: Create Release
+        id: create_release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Create release using GitHub API
+          RESPONSE=$(curl -s -X POST \
+            -H "Authorization: token $GITHUB_TOKEN" \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Content-Type: application/json" \
+            -d "{
+              \"tag_name\": \"${{ steps.version.outputs.tag }}\",
+              \"name\": \"Cookbook Sample - ${{ steps.version.outputs.tag }}\",
+              \"body\": \"Cookbook Sample PDF release ${{ steps.version.outputs.tag }}\n\nBuilt from commit ${{ steps.version.outputs.sha_short }} on ${{ steps.version.outputs.date }}\n\n## Release Assets\n\nThis release includes compiled PDF cookbook samples. All PDF files are available for download in the Assets section below.\",
+              \"draft\": false,
+              \"prerelease\": false
+            }" \
+            "https://api.github.com/repos/${{ github.repository }}/releases")
+
+          # Extract upload_url from response using jq (more reliable than grep)
+          UPLOAD_URL=$(echo "$RESPONSE" | jq -r '.upload_url' | sed 's/{.*//')
+          echo "upload_url=$UPLOAD_URL" >> $GITHUB_OUTPUT
+
+          # Extract release ID using jq (ensures we get the top-level id field)
+          RELEASE_ID=$(echo "$RESPONSE" | jq -r '.id')
+          # Ensure it's treated as a string and trim any whitespace
+          RELEASE_ID=$(echo "$RELEASE_ID" | tr -d '\n\r ')
+          echo "release_id=$RELEASE_ID" >> $GITHUB_OUTPUT
+
+          echo "Release created successfully"
+          echo "Upload URL: $UPLOAD_URL"
+          echo "Release ID: $RELEASE_ID"
+
+      - name: Upload Release Assets
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Get upload URL from previous step
+          UPLOAD_URL="${{ steps.create_release.outputs.upload_url }}"
+
+          # Loop through all PDFs in dist/ and upload each one as a release asset
+          for pdf_file in dist/*.pdf; do
+            if [ -f "$pdf_file" ]; then
+              filename=$(basename "$pdf_file")
+              echo "Uploading $filename to release ${{ steps.version.outputs.tag }}..."
+              curl -X POST \
+                -H "Authorization: token $GITHUB_TOKEN" \
+                -H "Accept: application/vnd.github.v3+json" \
+                -H "Content-Type: application/pdf" \
+                --data-binary @"$pdf_file" \
+                "${UPLOAD_URL}?name=$filename"
+            fi
+          done

@@ -1,0 +1,142 @@
+## Core LaTeX/BibTeX auxiliary files
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+
+## Intermediate documents
+*.dvi
+*.xdv
+*-converted-to.*
+
+## Bibliography auxiliary files
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+
+## Build tool auxiliary files
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+
+## Build tool directories for auxiliary files
+latex.out/
+
+## Auxiliary and intermediate files from other packages
+*.nav
+*.pre
+*.snm
+*.vrb
+
+## Latexmk
+*.fdb_latexmk
+
+## Nomenclature
+*.nlg
+*.nlo
+*.nls
+
+## Glossaries
+*.acn
+*.acr
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.lzo
+*.lzs
+
+## Hyperref
+*.brf
+
+## Listings
+*.lol
+
+## Makeidx
+*.idx
+*.ilg
+*.ind
+
+## Minitoc
+*.maf
+*.mlf
+*.mlt
+*.mtc[0-9]*
+*.slf[0-9]*
+*.slt[0-9]*
+*.stc[0-9]*
+
+## Minted
+_minted*
+*.pyg
+
+## Morewrites
+*.mw
+
+## Pax
+*.pax
+
+## PdfPages
+*.pdf
+
+## Sagetex
+*.sagetex.sage
+*.sagetex.py
+*.sagetex.scmd
+
+## Pythontex
+*.pytxcode
+pythontex-files-*/
+
+## TikZ & PGF
+*.dpth
+*.md5
+*.auxlock
+
+## Todonotes
+*.tdo
+
+## Xindy
+*.xdy
+
+## Xypic precompiled matrices
+*.xyc
+
+## Endfloat
+*.ttt
+*.fff
+
+## Latexindent backup files
+*.bak[0-9]*
+indent.log
+
+## LuaTeX temporary directories
+luatex.*/
+
+## Output and temporary directories
+dist/
+tmp/
+
+## Mac OS
+.DS_Store
+
+## Editor backup files
+*~
+*.swp
+*.swo
+\#*\#
+

@@ -1,0 +1,796 @@
+%----------------------------------------------------------------------------------------
+%   CookBook Sample - French
+%   LaTeX Sample File
+%----------------------------------------------------------------------------------------
+%
+%   Version:     1.0
+%   Date:        November 18, 2025
+%   Author:      AshDevFr
+%   GitHub:      @AshDevFr
+%   License:     CC BY-NC-SA 4.0
+%
+%   A sample LaTeX file for creating a beautiful cookbook in French.
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+	letterpaper, % Paper size, use 'a4paper' for A4 or 'letterpaper' for US letter (you may want to adjust margins afterwards)
+	10pt, % Default font size, available sizes are: 8pt, 9pt, 10pt, 11pt, 12pt, 14pt, 17pt and 20pt
+	twoside,
+	french, % French language
+]{CookBook}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	COVER PAGE
+%----------------------------------------------------------------------------------------
+
+\makecoverpage{
+	title={Mon Livre de Recettes},
+	subtitle={Recettes de trois Générations},
+	author={AshDevFr},
+	titlefontsize={\fontsize{36pt}{38pt}},
+	subtitlefontsize={\fontsize{24pt}{26pt}},
+	image={../images/book/cover.jpg},
+	opacity={0.6},
+	bgcolor={darkgrey},
+	textcolor={white},
+	shadowoffset={0.05cm}
+}
+
+%----------------------------------------------------------------------------------------
+%	PREFACE
+%----------------------------------------------------------------------------------------
+
+\makeprefacepage{
+	title={Préface},
+	text={Bienvenue dans cette collection de recettes, rassemblées au fil de trois générations de cuisine familiale et d'aventures culinaires à travers le monde. Chaque recette raconte une histoire—certaines transmises par des notes manuscrites sur du papier jauni, d'autres découvertes lors de voyages dans des marchés animés et des cuisines de campagne paisibles.\newline
+
+	Ce livre de cuisine est bien plus qu'une simple collection d'instructions et d'ingrédients. C'est une célébration de la joie que procure la création de quelque chose de délicieux, de la chaleur du partage d'un repas avec ses proches, et des souvenirs qui se forment autour de la table. Des petits-déjeuners simples de semaine aux festins élaborés du week-end, ces recettes ont été testées, ajustées et perfectionnées au fil d'innombrables repas.\newline
+
+	Que vous soyez débutant et découvriez tout juste la cuisine, ou cuisinier expérimenté à la recherche de nouvelles inspirations, j'espère que ces recettes apporteront autant de bonheur à votre table qu'elles en ont apporté à la nôtre. N'ayez pas peur de les personnaliser—les meilleures recettes sont celles qui évoluent à chaque fois qu'on les prépare.\newline
+
+	Bonne cuisine !},
+	layout={single},
+	image={../images/book/preface.jpg}
+}
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\maketoc
+
+%----------------------------------------------------------------------------------------
+%	BREAKFAST CHAPTER PAGE
+%----------------------------------------------------------------------------------------
+
+\makechapterpage{
+	title={Petit-Déjeuner},
+	bgcolor={paleorange},
+	image={../images/book/breakfast.jpg},
+	layout={right}
+}
+
+
+%----------------------------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	RECIPE EXAMPLE - BANANA PANCAKES
+%----------------------------------------------------------------------------------------
+
+\makeimagepage{
+	image={../images/recipes/banana-pancake.jpg},
+	caption = {Pancakes à la Banane},
+	textcolor={black},
+	shadowcolor={white},
+}
+
+\recipe{%
+	layout={simple},
+	imageheight={0.25\paperheight},
+	imageoverlayspace={0.2\paperheight},
+	title = {Pancakes à la Banane},
+	indexes = {Pancakes à la Banane, Recettes!Petit-déjeuner, Banane, Pancakes, Recettes végétariennes, Cuisine américaine},
+	description = {Ces pancakes à la banane à 3 ingrédients sont sains et faciles à préparer.},
+	serves = {4},
+	preptime = {5 min},
+	cookingtime = {15 min},
+	difficulty = {Débutant},
+	origin = {États-Unis},
+	tags = {Végétarien},
+	extrainstructioninfo = {Utilisez des bananes très mûres pour cette recette. Idéalement, elles doivent avoir au moins quelques taches brunes. Les bananes trop mûres sont plus sucrées et apportent plus de saveur de banane.},
+	ingredients = {
+			\ingredient{2 bananes moyennes à grandes bien mûres}
+			\ingredient{4 gros œufs}
+			\ingredient{1/2 tasse de farine de blé complet ou de sarrasin ou 2/3 tasse de farine d'avoine}
+			\ingredient{Exhausteurs de saveur/nutrition optionnels : ½ cuillère à café de cannelle moulue, jusqu'à 2 cuillères à soupe de graines de chanvre et/ou de graines de lin moulues, jusqu'à ¼ cuillère à café de sel}
+			\ingredient{Beurre, huile d'avocat ou ghee, pour la cuisson}
+		},
+	instructions ={
+			\instruction{Dans un bol moyen, écraser la banane avec une grande fourchette jusqu'à ce qu'elle soit brillante et presque lisse. Ajouter les œufs et fouetter jusqu'à ce que les œufs soient uniformément incorporés à la banane.}
+			\instruction{Ajouter la farine et les exhausteurs optionnels. Mélanger doucement jusqu'à ce que le tout soit combiné. Mettre de côté pendant que vous préchauffez la poêle (la pâte peut reposer jusqu'à 1 heure si nécessaire).}
+			\instruction{Chauffer une grande poêle (en acier inoxydable, fonte ou antiadhésive) à feu moyen-doux (si vous utilisez une plaque électrique, chauffez-la à 180°C). Vous êtes prêt à commencer la cuisson lorsqu'une goutte d'eau grésille au contact de la surface chaude. Si nécessaire, huiler légèrement la surface de cuisson avec une noisette de beurre ou d'huile, en essuyant soigneusement l'excédent avec du papier absorbant (les surfaces antiadhésives ne nécessitent probablement pas d'huile).}
+			\instruction{Verser 1/4 tasse de pâte sur la poêle chaude, en laissant quelques centimètres autour de chaque pancake pour l'expansion. Cuire jusqu'à ce que de petites bulles se forment à la surface des pancakes, 2 à 3 minutes.}
+			\instruction{Retourner les pancakes, puis cuire jusqu'à ce qu'ils soient légèrement dorés des deux côtés, 1 à 2 minutes de plus. Répéter le processus avec la pâte restante, en ajoutant plus de beurre et en réduisant la chaleur si les pancakes deviennent foncés à l'extérieur avant d'être cuits à l'intérieur.}
+			\instruction{Servir immédiatement ou garder au chaud dans un four à 95°C. Les pancakes restants peuvent être conservés au réfrigérateur jusqu'à 3 jours ou congelés jusqu'à 3 mois. Pour réchauffer, empiler les pancakes restants et les envelopper dans du papier absorbant avant de les réchauffer délicatement au micro-ondes.}
+		}
+}
+
+
+%----------------------------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	RECIPE EXAMPLE - FRENCH TOAST (Columns Layout, No Image)
+%----------------------------------------------------------------------------------------
+
+\recipe{%
+	title = {Pain Perdu Classique},
+	indexes = {Pain Perdu Classique, Pain Perdu, Recettes!Petit-déjeuner, Pain, Œufs, Recettes végétariennes, Cuisine française, Repas rapides},
+	description = {Pain perdu doré et croustillant avec un centre moelleux. Un petit-déjeuner de week-end préféré, facile à préparer mais qui semble spécial. Parfait avec du sirop d'érable et des baies fraîches.},
+	serves = {4},
+	preptime = {10 min},
+	cookingtime = {15 min},
+	difficulty = {Débutant},
+	origin = {France/États-Unis},
+	tags = {Petit-Déjeuner, Sucré, Végétarien, Rapide},
+	extrainstructioninfo = {Le pain de la veille fonctionne mieux car il absorbe le mélange de crème sans se désagréger. Le pain brioché ou challah crée le pain perdu le plus luxueux, mais n'importe quel pain tranché épais fera l'affaire.},
+	ingredients = {
+			\ingredientsection{Mélange de Crème}
+			\ingredient{4 gros œufs}
+			\ingredient{1 tasse de lait entier}
+			\ingredient{2 c. à soupe de sucre blanc}
+			\ingredient{1 c. à café d'extrait de vanille}
+			\ingredient{1 c. à café de cannelle moulue}
+			\ingredient{1/4 c. à café de muscade moulue}
+			\ingredient{Une pincée de sel}
+
+			\ingredientsection{Cuisson et Service}
+			\ingredient{8 tranches épaisses de pain (brioche, challah ou pain blanc)}
+			\ingredient{2-3 c. à soupe de beurre pour la cuisson}
+			\ingredient{Sirop d'érable, pour servir}
+			\ingredient{Baies fraîches, pour servir}
+			\ingredient{Sucre glace pour saupoudrer (optionnel)}
+		},
+	instructions ={
+			\instruction{Dans un plat peu profond ou un plat de cuisson, fouetter ensemble les œufs, le lait, le sucre, l'extrait de vanille, la cannelle, la muscade et le sel jusqu'à ce que le tout soit bien combiné.}
+			\instruction{Chauffer une grande poêle ou une plaque à feu moyen et ajouter 1 cuillère à soupe de beurre.}
+			\instruction{Tremper chaque tranche de pain dans le mélange de crème, en la laissant tremper environ 5 secondes de chaque côté. Ne pas trop tremper ou le pain se désagrégera.}
+			\instruction{Placer les tranches de pain trempées dans la poêle chauffée. Cuire 2-3 minutes de chaque côté jusqu'à ce qu'elles soient dorées et croustillantes à l'extérieur.}
+			\instruction{Transférer le pain perdu cuit dans une assiette et garder au chaud. Répéter avec les tranches de pain restantes, en ajoutant plus de beurre dans la poêle au besoin.}
+			\instruction{Servir immédiatement nappé de sirop d'érable, de baies fraîches et d'un saupoudrage de sucre glace si désiré.}
+		}
+}
+
+
+\makeimagepage{
+	image={../images/recipes/french-toast.jpg},
+	caption = {Pain Perdu Classique},
+}
+
+%----------------------------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	APPETIZERS CHAPTER PAGE
+%----------------------------------------------------------------------------------------
+
+\makechapterpage{
+	title={Entrées},
+	image={../images/book/salad.jpg}
+}
+
+%----------------------------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	RECIPE EXAMPLE - CLASSIC BRUSCHETTA (Columns Layout with Image)
+%----------------------------------------------------------------------------------------
+
+\recipe{%
+	image={../images/book/appetizer.jpg},
+	title = {Bruschetta Classique},
+	indexes = {Bruschetta Classique, Bruschetta, Recettes!Entrées, Tomates, Basilic, Ail, Recettes végétariennes, Cuisine italienne, Repas rapides},
+	description = {Une entrée italienne quintessentielle mettant en vedette du pain grillé garni de tomates fraîches, basilic, ail et huile d'olive. Simple mais absolument délicieux.},
+	serves = {6},
+	preptime = {15 min},
+	cookingtime = {5 min},
+	difficulty = {Débutant},
+	origin = {Italie},
+	tags = {Italien, Rapide},
+	vegetarian = {oui},
+	ingredients = {
+			\ingredientsection{Garniture}
+			\ingredient{4 grosses tomates mûres, coupées en dés}
+			\ingredient{3 gousses d'ail, hachées}
+			\ingredient{1/4 tasse de feuilles de basilic frais, hachées}
+			\ingredient{2 c. à soupe d'huile d'olive extra vierge}
+			\ingredient{1 c. à soupe de vinaigre balsamique}
+			\ingredient{Sel et poivre noir au goût}
+
+			\ingredientsection{Pain}
+			\ingredient{1 baguette française, tranchée en diagonale}
+			\ingredient{2 c. à soupe d'huile d'olive}
+			\ingredient{1 gousse d'ail, coupée en deux}
+		},
+	instructions ={
+			\instructionsection{Préparer la Garniture}
+			\instruction{Dans un bol moyen, combiner les tomates coupées en dés, l'ail haché et le basilic haché.}
+			\instruction{Ajouter l'huile d'olive et le vinaigre balsamique. Assaisonner avec du sel et du poivre au goût.}
+			\instruction{Mélanger délicatement et laisser reposer à température ambiante pendant au moins 10 minutes pour permettre aux saveurs de se mélanger.}
+
+			\instructionsection{Préparer le Pain}
+			\instruction{Préchauffer le four à 200°C.}
+			\instruction{Disposer les tranches de baguette sur une plaque de cuisson. Badigeonner légèrement d'huile d'olive.}
+			\instruction{Griller au four pendant 3-5 minutes jusqu'à ce qu'elles soient dorées et croustillantes.}
+			\instruction{Retirer du four et frotter immédiatement un côté de chaque tranche avec le côté coupé de la gousse d'ail coupée en deux.}
+
+			\instructionsection{Assembler et Servir}
+			\instruction{Déposer généreusement le mélange de tomates sur chaque tranche de pain grillé.}
+			\instruction{Servir immédiatement pendant que le pain est encore chaud et croustillant.}
+		}
+}
+
+
+%----------------------------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	RECIPE EXAMPLE - CAESAR SALAD (Simple Layout, No Image)
+%----------------------------------------------------------------------------------------
+
+\makeimagepage{
+	image={../images/recipes/caesar-salad.jpg},
+	caption = {Salade César},
+}
+
+\recipe{%
+	layout={simple},
+	title = {Salade César},
+	indexes = {Salade César, Salade, Recettes!Entrées, Recettes!Salades, Laitue romaine, Parmesan, Anchois},
+	description = {La salade César classique avec de la laitue romaine croustillante, une vinaigrette maison et des croûtons croquants. Un favori intemporel qui ne se démode jamais.},
+	serves = {4},
+	preptime = {20 min},
+	cookingtime = {10 min},
+	difficulty = {Intermédiaire},
+	origin = {Mexique/États-Unis},
+	tags = {Salade, Classique},
+	extrainstructioninfo = {Pour la meilleure saveur, utilisez du parmesan fraîchement râpé. La vinaigrette peut être préparée jusqu'à 3 jours à l'avance et conservée au réfrigérateur.},
+	ingredients = {
+			\ingredientsection{Vinaigrette}
+			\ingredient{2 gousses d'ail, hachées}
+			\ingredient{2 filets d'anchois, hachés}
+			\ingredient{2 c. à soupe de jus de citron frais}
+			\ingredient{1 c. à café de moutarde de Dijon}
+			\ingredient{1 c. à café de sauce Worcestershire}
+			\ingredient{1 tasse de mayonnaise}
+			\ingredient{1/2 tasse de parmesan fraîchement râpé}
+			\ingredient{Sel et poivre noir}
+
+			\ingredientsection{Salade}
+			\ingredient{2 grosses têtes de laitue romaine, hachées}
+			\ingredient{1 tasse de croûtons maison ou du commerce}
+			\ingredient{1/2 tasse de copeaux de parmesan}
+			\ingredient{Poivre noir fraîchement moulu}
+		},
+	instructions ={
+			\instruction{Dans un bol moyen, fouetter ensemble l'ail, les anchois, le jus de citron, la moutarde de Dijon et la sauce Worcestershire.}
+			\instruction{Incorporer lentement la mayonnaise en fouettant jusqu'à ce que le mélange soit bien combiné et lisse.}
+			\instruction{Incorporer le parmesan râpé. Assaisonner avec du sel et du poivre au goût. Réfrigérer jusqu'au moment d'utiliser.}
+			\instruction{Placer la laitue romaine hachée dans un grand bol de service.}
+			\instruction{Verser la quantité désirée de vinaigrette sur la laitue et mélanger bien pour enrober uniformément.}
+			\instruction{Ajouter les croûtons et mélanger à nouveau délicatement.}
+			\instruction{Garnir de copeaux de parmesan et de poivre noir fraîchement moulu. Servir immédiatement.}
+		}
+}
+
+
+
+%----------------------------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	RECIPE EXAMPLE - CAPRESE SALAD (Columns Layout, No Image)
+%----------------------------------------------------------------------------------------
+
+\recipe{%
+image={../images/recipes/caprese-salad.jpg},
+imageposition={bottom},
+imageheight={0.4\paperheight},
+title = {Salade Caprese},
+indexes = {Salade Caprese, Salade, Recettes!Entrées, Recettes!Salades, Mozzarella, Tomates, Basilic, Recettes végétariennes, Cuisine italienne, Repas sans cuisson, Recettes sans gluten},
+description = {Une belle salade italienne rafraîchissante présentant les couleurs du drapeau italien. La qualité des ingrédients est essentielle à ce plat simple mais élégant.},
+serves = {4},
+preptime = {10 min},
+difficulty = {Débutant},
+origin = {Italie},
+tags = {Italien, Sans Cuisson, Sans Gluten},
+vegetarian = {oui},
+extrainstructioninfo = {Utilisez les meilleures tomates que vous pouvez trouver—les variétés anciennes ou mûries sur pied fonctionnent à merveille. La mozzarella di bufala fraîche est traditionnelle et fortement recommandée.},
+ingredients = {
+		\ingredient{4 grosses tomates mûres, tranchées de 6 mm d'épaisseur}
+		\ingredient{450g de fromage mozzarella frais, tranché de 6 mm d'épaisseur}
+		\ingredient{1 tasse de feuilles de basilic frais}
+		\ingredient{3 c. à soupe d'huile d'olive extra vierge}
+		\ingredient{2 c. à soupe de vinaigre balsamique ou glaçage}
+		\ingredient{Sel de mer en flocons}
+		\ingredient{Poivre noir fraîchement moulu}
+	},
+instructions ={
+		\instruction{Disposer les tranches de tomate et de mozzarella sur un grand plat de service, en les alternant et en les faisant légèrement se chevaucher.}
+		\instruction{Glisser les feuilles de basilic frais entre les tranches de tomate et de mozzarella.}
+		\instruction{Arroser généreusement d'huile d'olive extra vierge et de vinaigre balsamique.}
+		\instruction{Saupoudrer de sel de mer en flocons et de poivre noir fraîchement moulu.}
+		\instruction{Laisser reposer à température ambiante pendant 5-10 minutes avant de servir pour permettre aux saveurs de se développer.}
+	}
+}
+
+
+%----------------------------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	RECIPE EXAMPLE - SPICY CHICKEN WINGS (Simple Layout with Image)
+%----------------------------------------------------------------------------------------
+
+\recipe{%
+	layout={simple},
+	image={../images/recipes/buffalo-chicken-wings.jpg},
+	imageheight={0.4\paperheight},
+	imageoverlayspace={0.35\paperheight},
+	title = {Ailes de Poulet Buffalo},
+	indexes = {Ailes de Poulet Buffalo, Ailes de Poulet, Recettes!Entrées, Poulet, Recettes épicées, Cuisine américaine, Plats au four},
+	description = {Ailes de poulet croustillantes et épicées avec une sauce buffalo piquante. Parfaites pour les jours de match ou toute réunion. Ces ailes sont cuites au four pour une version plus saine du classique.},
+	serves = {4-6},
+	preptime = {15 min},
+	cookingtime = {45 min},
+	difficulty = {Intermédiaire},
+	origin = {États-Unis},
+	tags = {Épicé, Poulet, Cuit au Four},
+	spicy = {oui},
+	extrainstructioninfo = {Pour des ailes extra croustillantes, séchez-les complètement avant l'assaisonnement et assurez-vous qu'elles sont disposées en une seule couche sans se toucher. Servir avec des bâtonnets de céleri et une vinaigrette au fromage bleu ou ranch.},
+	ingredients = {
+			\ingredientsection{Ailes}
+			\ingredient{1,4 kg d'ailes de poulet, séparées aux articulations, bouts retirés}
+			\ingredient{1 c. à soupe de bicarbonate de soude}
+			\ingredient{1 c. à café de sel}
+			\ingredient{1 c. à café de poudre d'ail}
+			\ingredient{1/2 c. à café de poivre noir}
+
+			\ingredientsection{Sauce Buffalo}
+			\ingredient{1/2 tasse de sauce piquante (Frank's RedHot de préférence)}
+			\ingredient{1/3 tasse de beurre non salé, fondu}
+			\ingredient{1 c. à soupe de vinaigre blanc}
+			\ingredient{1/4 c. à café de sauce Worcestershire}
+			\ingredient{1/4 c. à café de poivre de Cayenne (optionnel, pour plus de piquant)}
+		},
+	instructions ={
+			\instruction{Préchauffer le four à 120°C. Tapisser une grande plaque de cuisson de papier d'aluminium et placer une grille métallique dessus.}
+			\instruction{Sécher complètement les ailes de poulet avec du papier absorbant. Ceci est crucial pour une peau croustillante.}
+			\instruction{Dans un grand bol, combiner le bicarbonate de soude, le sel, la poudre d'ail et le poivre noir. Ajouter les ailes et mélanger jusqu'à ce qu'elles soient uniformément enrobées.}
+			\instruction{Disposer les ailes sur la grille métallique en une seule couche, en s'assurant qu'elles ne se touchent pas.}
+			\instruction{Cuire au four à 120°C pendant 30 minutes. Augmenter la température à 220°C et cuire pendant 40-45 minutes supplémentaires, en retournant à mi-cuisson, jusqu'à ce qu'elles soient dorées et croustillantes.}
+			\instruction{Pendant que les ailes cuisent, préparer la sauce buffalo en fouettant ensemble la sauce piquante, le beurre fondu, le vinaigre, la sauce Worcestershire et le poivre de Cayenne dans un petit bol.}
+			\instruction{Transférer les ailes cuites dans un grand bol, verser la sauce buffalo dessus et mélanger pour bien enrober. Servir immédiatement.}
+		}
+}
+
+
+%----------------------------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	ENTREES CHAPTER PAGE
+%----------------------------------------------------------------------------------------
+
+\makechapterpage{
+	title={Plats Principaux},
+	image={../images/book/pasta.jpg}
+}
+
+%----------------------------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	RECIPE EXAMPLE - SPAGEHETTI BOLOGNESE
+%----------------------------------------------------------------------------------------
+
+\recipe{%
+	image={../images/recipes/bolognese.jpg},
+	title = {Spaghetti Bolognaise},
+	indexes = {Spaghetti Bolognaise, Bolognaise, Recettes!Plats principaux, Recettes!Pâtes, Pâtes, Bœuf, Tomates, Cuisine italienne, Repas à préparer à l'avance},
+	description = {La sauce bolognaise, connue en italien sous le nom de ragú alla Bolognese, est une sauce à base de viande originaire de Bologne, en Italie. Dans la cuisine italienne, elle est traditionnellement utilisée pour accompagner les « tagliatelle al ragú » et pour préparer les « lasagne alla bolognese ».},
+	serves = {4},
+	preptime = {25 min},
+	cookingtime = {40 min},
+	difficulty = {Débutant},
+	origin = {Italie},
+	tags = {Pâtes, Viande, Italien, Bolognaise},
+	extrainstructioninfo = {Vous pouvez congeler cette sauce bolognaise jusqu'à 2 mois. Laisser refroidir à température ambiante, puis placer des portions individuelles ou la quantité totale dans des contenants hermétiques ou des sacs de congélation et expulser l'air. Étiqueter, dater et congeler. Mettre au réfrigérateur toute la nuit pour décongeler.},
+	ingredients = {
+			\ingredientsection{Sauce}
+			\ingredient{1 c. à soupe d'huile d'olive}
+			\ingredient{20g de beurre}
+			\ingredient{2 oignons bruns, coupés en deux, finement hachés}
+			\ingredient{2 gousses d'ail, écrasées}
+			\ingredient{500g de viande de bœuf hachée}
+			\ingredient{145g (1/2 tasse) de pâte de tomate}
+			\ingredient{250 mL (1 tasse) de vin rouge sec}
+			\ingredient{2 x 400g de boîtes de tomates en dés}
+			\ingredient{1 c. à soupe d'origan séché}
+			\ingredient{3 feuilles de laurier séchées}
+			\ingredient{Sel et poivre noir fraîchement moulu}
+			\ingredient{1/3 tasse de persil frais, légèrement tassé, grossièrement haché}
+
+			\ingredientsection{Service}
+			\ingredient{375g de spaghetti fins séchés}
+			\ingredient{80g de parmesan, pour servir}
+		},
+	instructions ={
+			\instructionsection{Préparation de la Sauce}
+			\instruction{Chauffer l'huile et le beurre dans une grande casserole à feu moyen-élevé. Ajouter l'oignon et l'ail et cuire, en remuant, pendant 3 minutes ou jusqu'à ce que l'oignon ramollisse. Ajouter la viande hachée et cuire, en remuant avec une cuillère en bois pour défaire les grumeaux, pendant 5 minutes ou jusqu'à ce que la viande change de couleur.}
+			\instruction{Ajouter la pâte de tomate, le vin, les tomates, l'origan et les feuilles de laurier, et porter à ébullition. Réduire le feu à moyen et laisser mijoter, en remuant occasionnellement, pendant 1 heure ou jusqu'à ce que la sauce épaississe. Goûter et assaisonner avec du sel et du poivre. Incorporer le persil.}
+			\instructionsection{Cuisson des Pâtes}
+			\instruction{Pendant ce temps, cuire les spaghetti dans une grande casserole d'eau bouillante salée en suivant les instructions du paquet jusqu'à ce qu'ils soient al dente. Égoutter.}
+			\instructionsection{Service}
+			\instruction{Répartir les spaghetti dans des bols et napper de sauce bolognaise. Râper le parmesan dessus et servir immédiatement.}
+
+		}
+}
+
+
+%----------------------------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	RECIPE EXAMPLE - GRILLED SALMON (Columns Layout with Custom Column Ratio)
+%----------------------------------------------------------------------------------------
+
+\recipe{%
+	image={../images/recipes/grilled-salmon.jpg},
+	columnratio={0.35, 0.65},
+	title = {Saumon Grillé au Citron et aux Herbes},
+	indexes = {Saumon Grillé au Citron et aux Herbes, Saumon Grillé, Recettes!Plats principaux, Recettes!Fruits de mer, Saumon, Poisson, Citron, Herbes, Plats grillés, Recettes saines, Recettes sans gluten},
+	description = {Saumon parfaitement grillé avec une marinade au citron et aux herbes. Cette recette démontre un ratio de colonnes personnalisé pour la disposition des ingrédients et des instructions.},
+	serves = {4},
+	preptime = {15 min},
+	cookingtime = {12 min},
+	difficulty = {Intermédiaire},
+	origin = {Contemporain},
+	tags = {Fruits de Mer, Grillé, Sain, Sans Gluten},
+	extrainstructioninfo = {Ne retournez pas le saumon trop tôt—attendez qu'il se détache naturellement des grilles du gril. Le poisson doit être opaque et se défaire facilement lorsqu'il est cuit.},
+	ingredients = {
+			\ingredientsection{Marinade}
+			\ingredient{1/4 tasse d'huile d'olive}
+			\ingredient{3 c. à soupe de jus de citron frais}
+			\ingredient{2 gousses d'ail, hachées}
+			\ingredient{1 c. à soupe d'aneth frais, haché}
+			\ingredient{1 c. à soupe de persil frais, haché}
+			\ingredient{1 c. à café de zeste de citron}
+			\ingredient{Sel et poivre}
+
+			\ingredientsection{Saumon}
+			\ingredient{4 filets de saumon (170g chacun)}
+			\ingredient{Quartiers de citron pour servir}
+			\ingredient{Herbes fraîches pour garnir}
+		},
+	instructions ={
+			\instruction{Dans un petit bol, fouetter ensemble l'huile d'olive, le jus de citron, l'ail, l'aneth, le persil, le zeste de citron, le sel et le poivre.}
+			\instruction{Placer les filets de saumon dans un plat peu profond et verser la marinade dessus. Tourner pour enrober. Couvrir et réfrigérer pendant 15-30 minutes.}
+			\instruction{Préchauffer le gril à feu moyen-élevé (environ 190-200°C). Nettoyer et huiler les grilles du gril.}
+			\instruction{Retirer le saumon de la marinade et sécher avec du papier absorbant. Jeter l'excès de marinade.}
+			\instruction{Placer le saumon côté peau vers le bas sur le gril. Fermer le couvercle et cuire pendant 6-8 minutes sans bouger.}
+			\instruction{Retourner soigneusement le saumon à l'aide d'une large spatule. Cuire encore 3-4 minutes jusqu'à ce que le poisson soit opaque et se défasse facilement.}
+			\instruction{Retirer du gril et laisser reposer 2 minutes. Servir avec des quartiers de citron et garnir d'herbes fraîches.}
+		}
+}
+
+
+%----------------------------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	RECIPE EXAMPLE - VEGETARIAN CURRY (Simple Layout, Vegetarian)
+%----------------------------------------------------------------------------------------
+
+\recipe{%
+	layout={simple},
+	imageheight={0.25\paperheight},
+	imageoverlayspace={0.2\paperheight},
+	title = {Curry Rouge Thaï aux Légumes},
+	indexes = {Curry Rouge Thaï aux Légumes, Curry Rouge Thaï, Curry, Recettes!Plats principaux, Recettes!Végétariennes, Légumes, Lait de coco, Cuisine thaïlandaise, Recettes épicées, Recettes véganes},
+	description = {Un curry végétarien vibrant et aromatique rempli de légumes colorés et de lait de coco crémeux. Personnalisez avec vos légumes préférés.},
+	serves = {6},
+	preptime = {20 min},
+	cookingtime = {25 min},
+	difficulty = {Intermédiaire},
+	origin = {Thaïlande},
+	tags = {Thaï, Épicé, Curry, Végétalien},
+	vegetarian = {oui},
+	spicy = {oui},
+	extrainstructioninfo = {La pâte de curry rouge thaï varie en niveau de piquant selon les marques. Commencez avec moins et ajoutez-en au goût. Servir sur du riz jasmin ou des nouilles de riz.},
+	ingredients = {
+			\ingredientsection{Curry}
+			\ingredient{2 c. à soupe d'huile de coco}
+			\ingredient{3-4 c. à soupe de pâte de curry rouge thaï}
+			\ingredient{1 boîte (400 mL) de lait de coco}
+			\ingredient{1 tasse de bouillon de légumes}
+			\ingredient{2 c. à soupe de sauce soja ou tamari}
+			\ingredient{1 c. à soupe de sucre brun ou sirop d'érable}
+			\ingredient{2 poivrons, tranchés}
+			\ingredient{1 aubergine moyenne, coupée en cubes}
+			\ingredient{1 tasse de haricots verts, parés}
+			\ingredient{1 tasse de pousses de bambou}
+			\ingredient{1 tasse de feuilles de basilic thaï}
+
+			\ingredientsection{Service}
+			\ingredient{Riz jasmin cuit}
+			\ingredient{Quartiers de lime frais}
+			\ingredient{Coriandre fraîche}
+			\ingredient{Piment rouge tranché (optionnel)}
+		},
+	instructions ={
+			\instruction{Chauffer l'huile de coco dans une grande casserole ou un wok à feu moyen. Ajouter la pâte de curry et cuire pendant 1-2 minutes, en remuant constamment, jusqu'à ce qu'elle soit parfumée.}
+			\instruction{Verser le lait de coco et bien remuer pour dissoudre la pâte de curry. Porter à un léger frémissement.}
+			\instruction{Ajouter le bouillon de légumes, la sauce soja et le sucre brun. Remuer pour combiner.}
+			\instruction{Ajouter l'aubergine et cuire pendant 5 minutes, puis ajouter les poivrons et les haricots verts. Laisser mijoter pendant 10-12 minutes jusqu'à ce que les légumes soient tendres mais encore croquants.}
+			\instruction{Incorporer les pousses de bambou et le basilic thaï. Cuire encore 2 minutes.}
+			\instruction{Goûter et ajuster l'assaisonnement avec plus de sauce soja, de sucre ou de pâte de curry au besoin.}
+			\instruction{Servir chaud sur du riz jasmin, garni de coriandre fraîche, de quartiers de lime et de piment tranché si désiré.}
+		}
+}
+
+
+\makeimagepage{
+	image={../images/recipes/thai-red-curry.jpg},
+	caption = {Curry Rouge Thaï aux Légumes},
+}
+
+%----------------------------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	DESSERTS CHAPTER PAGE
+%----------------------------------------------------------------------------------------
+
+\makechapterpage{
+	title={Desserts},
+	image={../images/book/dessert.jpg},
+	layout={right}
+}
+
+
+%----------------------------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	RECIPE EXAMPLE - CHOCOLATE CAKE (Columns Layout)
+%----------------------------------------------------------------------------------------
+
+\recipe{%
+	image={../images/recipes/chocolate-cake.jpg},
+	imageheight={0.5\paperheight},
+	imageoverlayspace={0.45\paperheight},
+	title = {Gâteau au Chocolat Décadent},
+	indexes = {Gâteau au Chocolat Décadent, Gâteau au Chocolat, Gâteau, Recettes!Desserts, Chocolat, Cacao, Crème au beurre, Cuisine américaine, Gâteaux de célébration, Plats au four},
+	description = {Un gâteau au chocolat en couches, riche et moelleux, avec un glaçage au beurre au chocolat onctueux. Cette pièce maîtresse est parfaite pour les anniversaires et les célébrations spéciales.},
+	serves = {12},
+	preptime = {30 min},
+	cookingtime = {35 min},
+	difficulty = {Avancé},
+	origin = {États-Unis},
+	tags = {Dessert, Chocolat, Gâteau, Célébration},
+	extrainstructioninfo = {Pour de meilleurs résultats, amenez tous les ingrédients à température ambiante avant de commencer. Les couches de gâteau peuvent être préparées la veille, enveloppées dans du film plastique et conservées à température ambiante.},
+	ingredients = {
+			\ingredientsection{Gâteau}
+			\ingredient{2 tasses de farine tout usage}
+			\ingredient{2 tasses de sucre blanc}
+			\ingredient{3/4 tasse de poudre de cacao non sucrée}
+			\ingredient{2 c. à café de bicarbonate de soude}
+			\ingredient{1 c. à café de levure chimique}
+			\ingredient{1 c. à café de sel}
+			\ingredient{2 gros œufs}
+			\ingredient{1 tasse de babeurre}
+			\ingredient{1 tasse de café noir fort, chaud}
+			\ingredient{1/2 tasse d'huile végétale}
+			\ingredient{2 c. à café d'extrait de vanille}
+
+			\ingredientsection{Glaçage}
+			\ingredient{1 tasse (2 bâtonnets) de beurre non salé, ramolli}
+			\ingredient{3 1/2 tasses de sucre glace}
+			\ingredient{1/2 tasse de poudre de cacao non sucrée}
+			\ingredient{1/2 tasse de crème épaisse}
+			\ingredient{2 c. à café d'extrait de vanille}
+			\ingredient{1/4 c. à café de sel}
+		},
+	instructions ={
+			\instructionsection{Préparer le Gâteau}
+			\instruction{Préchauffer le four à 175°C. Graisser et fariner deux moules à gâteau ronds de 23 cm.}
+			\instruction{Dans un grand bol, fouetter ensemble la farine, le sucre, la poudre de cacao, le bicarbonate de soude, la levure chimique et le sel.}
+			\instruction{Ajouter les œufs, le babeurre, le café chaud, l'huile et l'extrait de vanille. Battre avec un batteur électrique à vitesse moyenne pendant 2 minutes. La pâte sera liquide.}
+			\instruction{Verser la pâte uniformément dans les moules préparés. Cuire au four pendant 30-35 minutes jusqu'à ce qu'un cure-dent inséré au centre ressorte propre.}
+			\instruction{Laisser refroidir dans les moules pendant 10 minutes, puis démouler sur des grilles pour refroidir complètement.}
+
+			\instructionsection{Faire le Glaçage}
+			\instruction{Battre le beurre avec un batteur électrique jusqu'à ce qu'il soit crémeux et lisse, environ 2 minutes.}
+			\instruction{Tamiser ensemble le sucre glace et la poudre de cacao. Ajouter progressivement au beurre, en alternant avec la crème épaisse.}
+			\instruction{Ajouter l'extrait de vanille et le sel. Battre à haute vitesse pendant 3-4 minutes jusqu'à ce que le mélange soit léger et mousseux.}
+
+			\instructionsection{Assembler}
+			\instruction{Placer une couche de gâteau sur un plat de service. Étaler environ 1 tasse de glaçage.}
+			\instruction{Couvrir avec la deuxième couche de gâteau. Glacer le dessus et les côtés de tout le gâteau avec le glaçage restant.}
+			\instruction{Réfrigérer pendant au moins 30 minutes avant de trancher. Ramener à température ambiante avant de servir.}
+		}
+}
+
+
+%----------------------------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	RECIPE EXAMPLE - TIRAMISU (Simple Layout, No Image)
+%----------------------------------------------------------------------------------------
+
+\makeimagepage{
+	image={../images/recipes/tiramisu.jpg},
+	caption = {Tiramisu Classique}
+}
+
+\recipe{%
+	layout={simple},
+	title = {Tiramisu Classique},
+	indexes = {Tiramisu Classique, Tiramisu, Recettes!Desserts, Café, Mascarpone, Biscuits à la cuillère, Cuisine italienne, Desserts sans cuisson, Repas à préparer à l'avance},
+	description = {Le dessert italien bien-aimé avec des couches de biscuits imbibés de café et de mascarpone crémeux. Un dessert à préparer à l'avance qui se bonifie en reposant.},
+	serves = {8-10},
+	preptime = {30 min},
+	difficulty = {Intermédiaire},
+	origin = {Italie},
+	tags = {Italien, Dessert, Café, Sans Cuisson, À Préparer à l'Avance},
+	extrainstructioninfo = {Le tiramisu doit être réfrigéré pendant au moins 4 heures, mais une nuit entière est préférable. Cela permet aux saveurs de se mélanger et aux biscuits de ramollir parfaitement. Utilisez un espresso ou un café fort de haute qualité pour la meilleure saveur.},
+	ingredients = {
+			\ingredientsection{Couche de Crème}
+			\ingredient{6 gros jaunes d'œufs}
+			\ingredient{3/4 tasse de sucre blanc}
+			\ingredient{1 1/3 tasse de fromage mascarpone, à température ambiante}
+			\ingredient{2 tasses de crème épaisse, froide}
+
+			\ingredientsection{Couche de Café}
+			\ingredient{2 tasses d'espresso fort ou de café, refroidi}
+			\ingredient{3 c. à soupe de liqueur de café (optionnel)}
+			\ingredient{40-48 biscuits à la cuillère (savoiardi)}
+
+			\ingredientsection{Garniture}
+			\ingredient{2 c. à soupe de poudre de cacao non sucrée}
+			\ingredient{Copeaux de chocolat noir (optionnel)}
+		},
+	instructions ={
+			\instruction{Fouetter les jaunes d'œufs et le sucre dans un bol allant au bain-marie. Placer sur une casserole d'eau frémissante (méthode du bain-marie) et fouetter constamment pendant 8-10 minutes jusqu'à ce que le mélange soit épais et pâle. Retirer du feu et laisser refroidir légèrement.}
+			\instruction{Ajouter le mascarpone au mélange d'œufs et fouetter jusqu'à ce que le tout soit lisse et bien combiné. Mettre de côté.}
+			\instruction{Dans un bol séparé, fouetter la crème épaisse jusqu'à formation de pics fermes. Incorporer délicatement la crème fouettée dans le mélange de mascarpone en trois additions.}
+			\instruction{Combiner l'espresso refroidi avec la liqueur de café (si utilisée) dans un plat peu profond.}
+			\instruction{Tremper rapidement chaque biscuit à la cuillère dans le mélange de café (environ 2 secondes par côté) et disposer en une seule couche dans un plat de 23x33 cm.}
+			\instruction{Étaler la moitié de la crème de mascarpone sur les biscuits. Répéter avec une autre couche de biscuits trempés et le reste de la crème.}
+			\instruction{Couvrir de film plastique et réfrigérer pendant au moins 4 heures ou toute la nuit.}
+			\instruction{Avant de servir, saupoudrer généreusement de poudre de cacao et garnir de copeaux de chocolat si désiré.}
+		}
+}
+
+
+%----------------------------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	RECIPE EXAMPLE - APPLE PIE (Columns Layout with Image, Multiple Sections)
+%----------------------------------------------------------------------------------------
+
+\recipe{%
+	title = {Tarte aux Pommes Classique},
+	indexes = {Tarte aux Pommes Classique, Tarte aux Pommes, Tarte, Recettes!Desserts, Pommes, Cannelle, Pâtisserie, Cuisine américaine, Recettes d'automne, Plats au four},
+	description = {Une tarte aux pommes américaine traditionnelle avec une croûte feuilletée au beurre et une garniture aux pommes parfaitement épicée. C'est le réconfort à son meilleur.},
+	serves = {8},
+	preptime = {45 min},
+	cookingtime = {55 min},
+	difficulty = {Avancé},
+	origin = {États-Unis},
+	tags = {Dessert, Tarte, Américain, Automne, Cuit au Four},
+	extrainstructioninfo = {Pour une croûte ultra feuilletée, assurez-vous que tous les ingrédients sont froids et manipulez la pâte le moins possible. La tarte peut être préparée la veille et réchauffée avant de servir.},
+	ingredients = {
+			\ingredientsection{Pâte à Tarte}
+			\ingredient{2 1/2 tasses de farine tout usage}
+			\ingredient{1 c. à café de sel}
+			\ingredient{1 c. à soupe de sucre blanc}
+			\ingredient{1 tasse (2 bâtonnets) de beurre non salé froid, coupé en cubes}
+			\ingredient{6-8 c. à soupe d'eau glacée}
+
+			\ingredientsection{Garniture aux Pommes}
+			\ingredient{6-7 tasses de pommes tranchées (mélange de Granny Smith et Honeycrisp)}
+			\ingredient{2/3 tasse de sucre blanc}
+			\ingredient{1/4 tasse de farine tout usage}
+			\ingredient{1 c. à café de cannelle moulue}
+			\ingredient{1/4 c. à café de muscade moulue}
+			\ingredient{1/4 c. à café de sel}
+			\ingredient{2 c. à soupe de jus de citron}
+			\ingredient{2 c. à soupe de beurre, coupé en petits morceaux}
+
+			\ingredientsection{Garniture}
+			\ingredient{1 œuf, battu (pour dorure)}
+			\ingredient{1 c. à soupe de sucre cristallisé}
+		},
+	instructions ={
+			\instructionsection{Faire la Croûte}
+			\instruction{Pulser la farine, le sel et le sucre dans un robot culinaire. Ajouter le beurre froid et pulser jusqu'à ce que le mélange ressemble à une chapelure grossière.}
+			\instruction{Ajouter l'eau glacée 1 cuillère à soupe à la fois, en pulsant après chaque addition, jusqu'à ce que la pâte se rassemble.}
+			\instruction{Diviser la pâte en deux, former en disques, envelopper dans du film plastique et réfrigérer pendant au moins 1 heure.}
+
+			\instructionsection{Préparer la Garniture}
+			\instruction{Préchauffer le four à 220°C. Dans un grand bol, mélanger les pommes tranchées avec le sucre, la farine, la cannelle, la muscade, le sel et le jus de citron.}
+
+			\instructionsection{Assembler et Cuire}
+			\instruction{Abaisser un disque de pâte sur une surface farinée à 30 cm de diamètre. Transférer dans un moule à tarte de 23 cm.}
+			\instruction{Verser la garniture aux pommes dans la croûte et parsemer de morceaux de beurre. Abaisser le deuxième disque de pâte et placer sur la garniture. Couper l'excédent et pincer les bords pour sceller.}
+			\instruction{Faire plusieurs incisions dans la croûte supérieure pour l'aération. Badigeonner de dorure et saupoudrer de sucre cristallisé.}
+			\instruction{Placer la tarte sur une plaque de cuisson. Cuire au four pendant 20 minutes, puis réduire la chaleur à 190°C et cuire pendant 35-40 minutes de plus jusqu'à ce que la croûte soit dorée et que la garniture bouillonne.}
+			\instruction{Laisser refroidir sur une grille pendant au moins 2 heures avant de trancher. Servir tiède ou à température ambiante avec de la crème glacée à la vanille.}
+		}
+}
+
+
+\makeimagepage{
+	image={../images/recipes/apple-pie.jpg},
+	caption = {Tarte aux Pommes Classique}
+}
+
+%----------------------------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	TABLE DE CONVERSION
+%----------------------------------------------------------------------------------------
+
+\makeconversionpage{
+	title={Tables de Conversion}
+}
+
+%----------------------------------------------------------------------------------------
+%	INDEX
+%----------------------------------------------------------------------------------------
+
+\printindex
+
+%----------------------------------------------------------------------------------------
+%	QUATRIÈME DE COUVERTURE
+%----------------------------------------------------------------------------------------
+
+\makebackcoverpage{
+	topcontent={
+		{\fontsize{24pt}{28pt}\sourcesanspro\bfseries\selectfont\color{white}\MakeUppercase{À Propos de Ce Livre}}\par
+		\vspace{0.02\textheight}
+		Ce livre de cuisine représente une collection de recettes chéries transmises de génération en génération, chacune racontant une histoire de rassemblements familiaux, de célébrations de fêtes et de moments quotidiens rendus spéciaux par la nourriture que nous partageons. Des plats réconfortants simples aux festins élaborés, ces recettes ont été testées, affinées et perfectionnées au fil d'innombrables repas.\newline\newline
+		Que vous soyez un cuisinier expérimenté ou que vous commenciez tout juste votre parcours culinaire, nous espérons que ces recettes apporteront joie, inspiration et résultats délicieux à votre cuisine.
+	},
+	image={../images/book/back-cover.jpg},
+	imageopacity={0.8},
+	imageposition={right},
+	columnratio={0.5,0.5},
+	verticalsplit={0.5},
+	bottomcontent={
+		\textbf{De Notre Cuisine à la Vôtre :}\par
+		\vspace{0.01\textheight}
+		Commencez votre matinée du bon pied avec nos \textbf{Pancakes à la Banane} moelleux—un favori familial à la fois simple et satisfaisant. Pour une gâterie de week-end spéciale, vous devez absolument essayer notre \textbf{Pain Perdu Classique}, doré et parfaitement croustillant.\newline\newline
+		Pour les plats principaux, notre \textbf{Spaghetti Bolognaise} est une tradition du dîner du dimanche depuis des décennies, tandis que le \textbf{Saumon Grillé au Citron et aux Herbes} apporte de l'élégance à tout repas de semaine. Et ne manquez pas le dessert préféré de notre famille—le \textbf{Tiramisu Classique} qui a honoré d'innombrables célébrations et laisse toujours les invités demander la recette.\newline\newline
+		\textit{Chaque recette comprend des instructions détaillées, des listes d'ingrédients et des conseils utiles pour assurer votre succès en cuisine.}
+	},
+	isbn={978-0-123456-78-9},
+	publisher={Publié par Votre Nom d'Éditeur},
+	copyright={© 2025 Tous droits réservés.},
+	textcolor={white},
+	bgcolor={darkgrey},
+	divider={true},
+	barcodeplaceholder={true}
+}
+
+\end{document}

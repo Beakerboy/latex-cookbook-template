@@ -1,0 +1,9 @@
+# ChkTeX configuration for LuaLaTeX cookbook project
+# Suppress warnings that are false positives for LuaLaTeX
+
+# Suppress warning about undefined control sequences (emoji package commands)
+CmdLine { -n2 -n6 -n13 -n24 }
+
+# Allow LuaLaTeX-specific commands
+VerbEnvir { emoji }
+

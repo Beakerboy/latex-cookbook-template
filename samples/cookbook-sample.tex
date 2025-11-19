@@ -1,0 +1,795 @@
+%----------------------------------------------------------------------------------------
+%   CookBook Sample
+%   LaTeX Sample File
+%----------------------------------------------------------------------------------------
+%
+%   Version:     1.0
+%   Date:        November 18, 2025
+%   Author:      AshDevFr
+%   GitHub:      @AshDevFr
+%   License:     CC BY-NC-SA 4.0
+%
+%   A sample LaTeX file for creating a beautiful cookbook.
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+	letterpaper, % Paper size, use 'a4paper' for A4 or 'letterpaper' for US letter (you may want to adjust margins afterwards)
+	10pt, % Default font size, available sizes are: 8pt, 9pt, 10pt, 11pt, 12pt, 14pt, 17pt and 20pt
+	twoside
+]{CookBook}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	COVER PAGE
+%----------------------------------------------------------------------------------------
+
+\makecoverpage{
+	title={My Cookbook},
+	subtitle={Recipes from Three Generations},
+	author={AshDevFr},
+	titlefontsize={\fontsize{36pt}{38pt}},
+	subtitlefontsize={\fontsize{24pt}{26pt}},
+	image={../images/book/cover.jpg},
+	opacity={0.6},
+	bgcolor={darkgrey},
+	textcolor={white},
+	shadowoffset={0.05cm}
+}
+
+%----------------------------------------------------------------------------------------
+%	PREFACE
+%----------------------------------------------------------------------------------------
+
+\makeprefacepage{
+	title={Preface},
+	text={Welcome to this collection of recipes, gathered from three generations of family cooking and culinary adventures around the world. Each recipe tells a story—some passed down through handwritten notes on yellowed paper, others discovered during travels through bustling markets and quiet countryside kitchens.\newline
+
+	This cookbook is more than just a collection of instructions and ingredients. It's a celebration of the joy that comes from creating something delicious, the warmth of sharing a meal with loved ones, and the memories that form around the dinner table. From simple weekday breakfasts to elaborate weekend feasts, these recipes have been tested, adjusted, and perfected over countless meals.\newline
+
+	Whether you're a beginner just learning your way around the kitchen or an experienced cook looking for new inspiration, I hope these recipes bring as much happiness to your table as they have brought to ours. Don't be afraid to make them your own—the best recipes are the ones that evolve with each telling.\newline
+
+	Happy cooking!},
+	layout={single},
+	image={../images/book/preface.jpg}
+}
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\maketoc
+
+%----------------------------------------------------------------------------------------
+%	BREAKFAST CHAPTER PAGE
+%----------------------------------------------------------------------------------------
+
+\makechapterpage{
+	title={Breakfast},
+	bgcolor={paleorange},
+	image={../images/book/breakfast.jpg},
+	layout={right}
+}
+
+
+%----------------------------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	RECIPE EXAMPLE - BANANA PANCAKES
+%----------------------------------------------------------------------------------------
+
+\makeimagepage{
+	image={../images/recipes/banana-pancake.jpg},
+	caption = {Banana Pancakes},
+	textcolor={black},
+	shadowcolor={white},
+}
+
+\recipe{%
+	layout={simple},
+	imageheight={0.25\paperheight},
+	imageoverlayspace={0.2\paperheight},
+	title = {Banana Pancakes},
+	description = {This 3-ingredient banana pancake recipe is healthy and easy to make.},
+	serves = {4},
+	preptime = {5 mins},
+	cookingtime = {15 mins},
+	difficulty = {Beginner},
+	origin = {USA},
+	tags = {Vegetarian},
+	indexes = {Banana Pancakes, Recipes!Breakfast, Banana, Pancakes, Vegetarian recipes, American cuisine},
+	extrainstructioninfo = {Use overripe bananas for this recipe. Ideally, they have at least a few brown spots. Overripe bananas are sweeter and impart more banana flavor.},
+	ingredients = {
+			\ingredient{2 medium-to-large ripe bananas}
+			\ingredient{4 large eggs}
+			\ingredient{1/2 cup whole wheat flour or buckwheat flour or 2/3 cup oat flour}
+			\ingredient{Optional flavor/nutrition boosters: ½ teaspoon ground cinnamon, up to 2 tablespoons hemp hearts and/or ground flaxseed, up to ¼ teaspoon salt}
+			\ingredient{Butter, avocado oil or ghee, for cooking}
+		},
+	instructions ={
+			\instruction{In a medium mixing bowl, mash the banana with a large fork until it's shiny and mostly smooth. Add the eggs and whisk until the eggs are evenly incorporated into the banana.}
+			\instruction{Add the flour and any optional boosters. Gently stir until combined. Set aside while you preheat the skillet (the batter can rest for up to 1 hour if need be).}
+			\instruction{Heat a large skillet (stainless steel, cast iron or nonstick) over medium-low heat (if using an electric griddle, heat it to 350 degrees Fahrenheit). You're ready to start cooking pancakes once a drop of water sizzles on contact with the hot surface. If necessary, lightly oil the cooking surface with a pat of butter or oil, carefully wiping up excess with a paper towel (nonstick surfaces likely won't require any oil).}
+			\instruction{Scoop ¼ cup batter onto the hot skillet, leaving a couple of inches around each pancake for expansion. Cook until small bubbles form on the surface of the pancakes, 2 to 3 minutes.}
+			\instruction{Flip the pancakes, then cook until lightly golden on both sides, 1 to 2 minutes more. Repeat the process with the remaining batter, adding more butter and dialing down the heat if the pancakes are turning dark on the outside before they are cooked through on the inside.}
+			\instruction{Serve immediately or keep warm in a 200 degree Fahrenheit oven. Leftover pancakes can be stored in the refrigerator for up to 3 days, or frozen for up to 3 months. To reheat, stack leftover pancakes and wrap them in a paper towel before gently reheating in the microwave.}
+		}
+}
+
+
+%----------------------------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	RECIPE EXAMPLE - FRENCH TOAST (Columns Layout, No Image)
+%----------------------------------------------------------------------------------------
+
+\recipe{%
+	title = {Classic French Toast},
+	indexes = {Classic French Toast, French Toast, Recipes!Breakfast, Bread, Eggs, Vegetarian recipes, French cuisine, Quick meals},
+	description = {Golden, crispy French toast with a custardy center. A weekend breakfast favorite that's easy to make yet feels special. Perfect with maple syrup and fresh berries.},
+	serves = {4},
+	preptime = {10 mins},
+	cookingtime = {15 mins},
+	difficulty = {Beginner},
+	origin = {France/USA},
+	tags = {Breakfast, Sweet, Vegetarian, Quick},
+	extrainstructioninfo = {Day-old bread works best as it absorbs the custard mixture without falling apart. Brioche or challah bread creates the most luxurious French toast, but any thick-sliced bread will work.},
+	ingredients = {
+			\ingredientsection{Custard Mixture}
+			\ingredient{4 large eggs}
+			\ingredient{1 cup whole milk}
+			\ingredient{2 tbsp granulated sugar}
+			\ingredient{1 tsp vanilla extract}
+			\ingredient{1 tsp ground cinnamon}
+			\ingredient{1/4 tsp ground nutmeg}
+			\ingredient{Pinch of salt}
+
+			\ingredientsection{Cooking and Serving}
+			\ingredient{8 thick slices bread (brioche, challah, or white bread)}
+			\ingredient{2-3 tbsp butter for cooking}
+			\ingredient{Maple syrup, for serving}
+			\ingredient{Fresh berries, for serving}
+			\ingredient{Powdered sugar for dusting (optional)}
+		},
+	instructions ={
+			\instruction{In a shallow bowl or baking dish, whisk together eggs, milk, sugar, vanilla extract, cinnamon, nutmeg, and salt until well combined.}
+			\instruction{Heat a large skillet or griddle over medium heat and add 1 tablespoon of butter.}
+			\instruction{Dip each bread slice into the custard mixture, allowing it to soak for about 5 seconds per side. Don't oversoak or the bread will fall apart.}
+			\instruction{Place soaked bread slices in the heated skillet. Cook for 2-3 minutes per side until golden brown and crispy on the outside.}
+			\instruction{Transfer cooked French toast to a plate and keep warm. Repeat with remaining bread slices, adding more butter to the pan as needed.}
+			\instruction{Serve immediately topped with maple syrup, fresh berries, and a dusting of powdered sugar if desired.}
+		}
+}
+
+
+\makeimagepage{
+	image={../images/recipes/french-toast.jpg},
+	caption = {Classic French Toast},
+}
+
+%----------------------------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	APPETIZERS CHAPTER PAGE
+%----------------------------------------------------------------------------------------
+
+\makechapterpage{
+	title={Appetizers},
+	image={../images/book/salad.jpg}
+}
+
+%----------------------------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	RECIPE EXAMPLE - CLASSIC BRUSCHETTA (Columns Layout with Image)
+%----------------------------------------------------------------------------------------
+
+\recipe{%
+	image={../images/book/appetizer.jpg},
+	title = {Classic Bruschetta},
+	indexes = {Classic Bruschetta, Bruschetta, Recipes!Appetizers, Tomatoes, Basil, Garlic, Vegetarian recipes, Italian cuisine, Quick meals},
+	description = {A quintessential Italian appetizer featuring toasted bread topped with fresh tomatoes, basil, garlic, and olive oil. Simple yet absolutely delicious.},
+	serves = {6},
+	preptime = {15 mins},
+	cookingtime = {5 mins},
+	difficulty = {Beginner},
+	origin = {Italy},
+	tags = {Italian, Quick},
+	vegetarian = {yes},
+	ingredients = {
+			\ingredientsection{Topping}
+			\ingredient{4 large ripe tomatoes, diced}
+			\ingredient{3 cloves garlic, minced}
+			\ingredient{1/4 cup fresh basil leaves, chopped}
+			\ingredient{2 tbsp extra virgin olive oil}
+			\ingredient{1 tbsp balsamic vinegar}
+			\ingredient{Salt and black pepper to taste}
+
+			\ingredientsection{Bread}
+			\ingredient{1 French baguette, sliced diagonally}
+			\ingredient{2 tbsp olive oil}
+			\ingredient{1 garlic clove, halved}
+		},
+	instructions ={
+			\instructionsection{Prepare the Topping}
+			\instruction{In a medium bowl, combine diced tomatoes, minced garlic, and chopped basil.}
+			\instruction{Add olive oil and balsamic vinegar. Season with salt and pepper to taste.}
+			\instruction{Mix gently and let stand at room temperature for at least 10 minutes to allow flavors to meld.}
+
+			\instructionsection{Prepare the Bread}
+			\instruction{Preheat oven to 400°F (200°C).}
+			\instruction{Arrange baguette slices on a baking sheet. Brush lightly with olive oil.}
+			\instruction{Toast in the oven for 3-5 minutes until golden and crispy.}
+			\instruction{Remove from oven and immediately rub one side of each slice with the cut side of the halved garlic clove.}
+
+			\instructionsection{Assemble and Serve}
+			\instruction{Spoon the tomato mixture generously onto each toasted bread slice.}
+			\instruction{Serve immediately while the bread is still warm and crispy.}
+		}
+}
+
+
+%----------------------------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	RECIPE EXAMPLE - CAESAR SALAD (Simple Layout, No Image)
+%----------------------------------------------------------------------------------------
+
+\makeimagepage{
+	image={../images/recipes/caesar-salad.jpg},
+	caption = {Caesar Salad},
+}
+
+\recipe{%
+	layout={simple},
+	title = {Caesar Salad},
+	indexes = {Caesar Salad, Salad, Recipes!Appetizers, Recipes!Salads, Romaine lettuce, Parmesan, Anchovies},
+	description = {The classic Caesar salad with crispy romaine lettuce, homemade dressing, and crunchy croutons. A timeless favorite that never goes out of style.},
+	serves = {4},
+	preptime = {20 mins},
+	cookingtime = {10 mins},
+	difficulty = {Intermediate},
+	origin = {Mexico/USA},
+	tags = {Salad, Classic},
+	extrainstructioninfo = {For the best flavor, use freshly grated Parmesan cheese. The dressing can be made up to 3 days ahead and stored in the refrigerator.},
+	ingredients = {
+			\ingredientsection{Dressing}
+			\ingredient{2 garlic cloves, minced}
+			\ingredient{2 anchovy fillets, minced}
+			\ingredient{2 tbsp fresh lemon juice}
+			\ingredient{1 tsp Dijon mustard}
+			\ingredient{1 tsp Worcestershire sauce}
+			\ingredient{1 cup mayonnaise}
+			\ingredient{1/2 cup freshly grated Parmesan}
+			\ingredient{Salt and black pepper}
+
+			\ingredientsection{Salad}
+			\ingredient{2 large heads romaine lettuce, chopped}
+			\ingredient{1 cup homemade or store-bought croutons}
+			\ingredient{1/2 cup shaved Parmesan cheese}
+			\ingredient{Freshly cracked black pepper}
+		},
+	instructions ={
+			\instruction{In a medium bowl, whisk together garlic, anchovies, lemon juice, Dijon mustard, and Worcestershire sauce.}
+			\instruction{Slowly whisk in mayonnaise until well combined and smooth.}
+			\instruction{Stir in grated Parmesan cheese. Season with salt and pepper to taste. Refrigerate until ready to use.}
+			\instruction{Place chopped romaine lettuce in a large serving bowl.}
+			\instruction{Pour desired amount of dressing over the lettuce and toss well to coat evenly.}
+			\instruction{Add croutons and toss again gently.}
+			\instruction{Top with shaved Parmesan cheese and freshly cracked black pepper. Serve immediately.}
+		}
+}
+
+
+
+%----------------------------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	RECIPE EXAMPLE - CAPRESE SALAD (Columns Layout, No Image)
+%----------------------------------------------------------------------------------------
+
+\recipe{%
+image={../images/recipes/caprese-salad.jpg},
+imageposition={bottom},
+imageheight={0.4\paperheight},
+title = {Caprese Salad},
+indexes = {Caprese Salad, Salad, Recipes!Appetizers, Recipes!Salads, Mozzarella, Tomatoes, Basil, Vegetarian recipes, Italian cuisine, No-cook meals, Gluten-free recipes},
+description = {A beautiful and refreshing Italian salad showcasing the colors of the Italian flag. The quality of ingredients is key to this simple yet elegant dish.},
+serves = {4},
+preptime = {10 mins},
+difficulty = {Beginner},
+origin = {Italy},
+tags = {Italian, No-Cook, Gluten-Free},
+vegetarian = {yes},
+extrainstructioninfo = {Use the best quality tomatoes you can find—heirloom or vine-ripened varieties work beautifully. Fresh mozzarella di bufala is traditional and highly recommended.},
+ingredients = {
+		\ingredient{4 large ripe tomatoes, sliced 1/4 inch thick}
+		\ingredient{16 oz fresh mozzarella cheese, sliced 1/4 inch thick}
+		\ingredient{1 cup fresh basil leaves}
+		\ingredient{3 tbsp extra virgin olive oil}
+		\ingredient{2 tbsp balsamic vinegar or glaze}
+		\ingredient{Flaky sea salt}
+		\ingredient{Freshly ground black pepper}
+	},
+instructions ={
+		\instruction{Arrange tomato and mozzarella slices on a large serving platter, alternating and slightly overlapping them.}
+		\instruction{Tuck fresh basil leaves between the tomato and mozzarella slices.}
+		\instruction{Drizzle generously with extra virgin olive oil and balsamic vinegar.}
+		\instruction{Sprinkle with flaky sea salt and freshly ground black pepper.}
+		\instruction{Let stand at room temperature for 5-10 minutes before serving to allow the flavors to develop.}
+	}
+}
+
+
+%----------------------------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	RECIPE EXAMPLE - SPICY CHICKEN WINGS (Simple Layout with Image)
+%----------------------------------------------------------------------------------------
+
+\recipe{%
+	layout={simple},
+	image={../images/recipes/buffalo-chicken-wings.jpg},
+	imageheight={0.4\paperheight},
+	imageoverlayspace={0.35\paperheight},
+	title = {Buffalo Chicken Wings},
+	indexes = {Buffalo Chicken Wings, Chicken Wings, Recipes!Appetizers, Chicken, Spicy recipes, American cuisine, Baked dishes},
+	description = {Crispy, spicy chicken wings with a tangy buffalo sauce. Perfect for game day or any gathering. These wings are baked for a healthier twist on the classic.},
+	serves = {4-6},
+	preptime = {15 mins},
+	cookingtime = {45 mins},
+	difficulty = {Intermediate},
+	origin = {USA},
+	tags = {Spicy, Chicken, Baked},
+	spicy = {yes},
+	extrainstructioninfo = {For extra crispy wings, pat them completely dry before seasoning and make sure they're arranged in a single layer without touching. Serve with celery sticks and blue cheese or ranch dressing.},
+	ingredients = {
+			\ingredientsection{Wings}
+			\ingredient{3 lbs chicken wings, separated at joints, tips removed}
+			\ingredient{1 tbsp baking powder}
+			\ingredient{1 tsp salt}
+			\ingredient{1 tsp garlic powder}
+			\ingredient{1/2 tsp black pepper}
+
+			\ingredientsection{Buffalo Sauce}
+			\ingredient{1/2 cup hot sauce (Frank's RedHot preferred)}
+			\ingredient{1/3 cup unsalted butter, melted}
+			\ingredient{1 tbsp white vinegar}
+			\ingredient{1/4 tsp Worcestershire sauce}
+			\ingredient{1/4 tsp cayenne pepper (optional, for extra heat)}
+		},
+	instructions ={
+			\instruction{Preheat oven to 250°F (120°C). Line a large baking sheet with aluminum foil and place a wire rack on top.}
+			\instruction{Pat the chicken wings completely dry with paper towels. This is crucial for crispy skin.}
+			\instruction{In a large bowl, combine baking powder, salt, garlic powder, and black pepper. Add wings and toss until evenly coated.}
+			\instruction{Arrange wings on the wire rack in a single layer, making sure they don't touch.}
+			\instruction{Bake at 250°F for 30 minutes. Increase temperature to 425°F (220°C) and bake for an additional 40-45 minutes, flipping halfway through, until golden brown and crispy.}
+			\instruction{While wings are baking, prepare the buffalo sauce by whisking together hot sauce, melted butter, vinegar, Worcestershire sauce, and cayenne pepper in a small bowl.}
+			\instruction{Transfer cooked wings to a large bowl, pour buffalo sauce over them, and toss to coat evenly. Serve immediately.}
+		}
+}
+
+
+%----------------------------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	ENTREES CHAPTER PAGE
+%----------------------------------------------------------------------------------------
+
+\makechapterpage{
+	title={Entrees},
+	image={../images/book/pasta.jpg}
+}
+
+%----------------------------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	RECIPE EXAMPLE - SPAGEHETTI BOLOGNESE
+%----------------------------------------------------------------------------------------
+
+\recipe{%
+	image={../images/recipes/bolognese.jpg},
+	title = {Spaghetti bolognese},
+	indexes = {Spaghetti Bolognese, Bolognese, Recipes!Entrees, Recipes!Pasta, Pasta, Beef, Tomatoes, Italian cuisine, Make-ahead meals},
+	description = {Bolognese sauce, known in Italian as ragú alla Bolognese, is a meat-based sauce originating from Bologna, Italy. In Italian cuisine, it is customarily used to dress ``tagliatelle al ragú" and to prepare ``lasagne alla bolognese".},
+	serves = {4},
+	preptime = {25 mins},
+	cookingtime = {40 mins},
+	difficulty = {Beginner},
+	origin = {Italy},
+	tags = {Pasta, Meat, Italian, Bolognese},
+	extrainstructioninfo = {You can freeze this bolognese sauce for up to 2 months. Cool to room temperature, then place individual portions or whole quantity in airtight containers or freezer bags and expel air. Label, date and freeze. Place in the fridge overnight to thaw.},
+	ingredients = {
+			\ingredientsection{Sauce}
+			\ingredient{1 tbsp olive oil}
+			\ingredient{20g butter}
+			\ingredient{2 brown onions, halved,\\ finely chopped}
+			\ingredient{2 garlic cloves, crushed}
+			\ingredient{500g beef mince}
+			\ingredient{145g (1/2 cup) tomato paste}
+			\ingredient{250mL (1 cup) dry red wine}
+			\ingredient{2 x 400g cans of diced tomatoes}
+			\ingredient{1 tbsp dried oregano}
+			\ingredient{3 dried bay leaves}
+			\ingredient{Salt and freshly ground\\ black pepper}
+			\ingredient{1/3 cup fresh parsley, loosely packed, coarsely chopped}
+
+			\ingredientsection{Serving}
+			\ingredient{375g dried thin spaghetti}
+			\ingredient{80g parmesan, to serve}
+		},
+	instructions ={
+			\instructionsection{Preparing the Sauce}
+			\instruction{Heat oil and butter in a large saucepan over medium-high heat. Add onion and garlic and cook, stirring, for 3 minutes or until onion softens. Add the mince and cook, stirring with a wooden spoon to break up any lumps, for 5 minutes or until the mince changes color.}
+			\instruction{Add the tomato paste, wine, tomato, oregano and bay leaves, and bring to the boil. Reduce heat to medium and simmer, stirring occasionally, for 1 hour or until sauce thickens. Taste and season with salt and pepper. Stir in the parsley.}
+			\instructionsection{Cooking the Pasta}
+			\instruction{Meanwhile, cook the spaghetti in a large saucepan of salted boiling water following packet directions until al dente. Drain.}
+			\instructionsection{Serving}
+			\instruction{Divide the spaghetti among bowls and spoon over bolognese sauce. Grate over the parmesan and serve immediately.}
+
+		}
+}
+
+
+%----------------------------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	RECIPE EXAMPLE - GRILLED SALMON (Columns Layout with Custom Column Ratio)
+%----------------------------------------------------------------------------------------
+
+\recipe{%
+	image={../images/recipes/grilled-salmon.jpg},
+	columnratio={0.35, 0.65},
+	title = {Lemon Herb Grilled Salmon},
+	indexes = {Lemon Herb Grilled Salmon, Grilled Salmon, Recipes!Entrees, Recipes!Seafood, Salmon, Fish, Lemon, Herbs, Grilled dishes, Healthy recipes, Gluten-free recipes},
+	description = {Perfectly grilled salmon with a bright lemon herb marinade. This recipe demonstrates a custom column ratio for the ingredients and instructions layout.},
+	serves = {4},
+	preptime = {15 mins},
+	cookingtime = {12 mins},
+	difficulty = {Intermediate},
+	origin = {Contemporary},
+	tags = {Seafood, Grilled, Healthy, Gluten-Free},
+	extrainstructioninfo = {Don't flip the salmon too early—wait until it naturally releases from the grill grates. The fish should be opaque and flake easily when done.},
+	ingredients = {
+			\ingredientsection{Marinade}
+			\ingredient{1/4 cup olive oil}
+			\ingredient{3 tbsp fresh lemon juice}
+			\ingredient{2 cloves garlic, minced}
+			\ingredient{1 tbsp fresh dill, chopped}
+			\ingredient{1 tbsp fresh parsley, chopped}
+			\ingredient{1 tsp lemon zest}
+			\ingredient{Salt and pepper}
+
+			\ingredientsection{Salmon}
+			\ingredient{4 salmon fillets (6 oz each)}
+			\ingredient{Lemon wedges for serving}
+			\ingredient{Fresh herbs for garnish}
+		},
+	instructions ={
+			\instruction{In a small bowl, whisk together olive oil, lemon juice, garlic, dill, parsley, lemon zest, salt, and pepper.}
+			\instruction{Place salmon fillets in a shallow dish and pour marinade over them. Turn to coat. Cover and refrigerate for 15-30 minutes.}
+			\instruction{Preheat grill to medium-high heat (about 375-400°F). Clean and oil the grill grates.}
+			\instruction{Remove salmon from marinade and pat dry with paper towels. Discard excess marinade.}
+			\instruction{Place salmon skin-side down on the grill. Close the lid and cook for 6-8 minutes without moving.}
+			\instruction{Carefully flip the salmon using a wide spatula. Cook for another 3-4 minutes until the fish is opaque and flakes easily.}
+			\instruction{Remove from grill and let rest for 2 minutes. Serve with lemon wedges and garnish with fresh herbs.}
+		}
+}
+
+
+%----------------------------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	RECIPE EXAMPLE - VEGETARIAN CURRY (Simple Layout, Vegetarian)
+%----------------------------------------------------------------------------------------
+
+\recipe{%
+	layout={simple},
+	imageheight={0.25\paperheight},
+	imageoverlayspace={0.2\paperheight},
+	title = {Thai Red Curry with Vegetables},
+	indexes = {Thai Red Curry with Vegetables, Thai Red Curry, Curry, Recipes!Entrees, Recipes!Vegetarian, Vegetables, Coconut milk, Thai cuisine, Spicy recipes, Vegan recipes},
+	description = {A vibrant and aromatic vegetarian curry packed with colorful vegetables and creamy coconut milk. Customize with your favorite vegetables.},
+	serves = {6},
+	preptime = {20 mins},
+	cookingtime = {25 mins},
+	difficulty = {Intermediate},
+	origin = {Thailand},
+	tags = {Thai, Spicy, Curry, Vegan},
+	vegetarian = {yes},
+	spicy = {yes},
+	extrainstructioninfo = {Thai red curry paste varies in heat level between brands. Start with less and add more to taste. Serve over jasmine rice or rice noodles.},
+	ingredients = {
+			\ingredientsection{Curry}
+			\ingredient{2 tbsp coconut oil}
+			\ingredient{3-4 tbsp Thai red curry paste}
+			\ingredient{1 can (14 oz) coconut milk}
+			\ingredient{1 cup vegetable broth}
+			\ingredient{2 tbsp soy sauce or tamari}
+			\ingredient{1 tbsp brown sugar or maple syrup}
+			\ingredient{2 bell peppers, sliced}
+			\ingredient{1 medium eggplant, cubed}
+			\ingredient{1 cup green beans, trimmed}
+			\ingredient{1 cup bamboo shoots}
+			\ingredient{1 cup Thai basil leaves}
+
+			\ingredientsection{Serving}
+			\ingredient{Cooked jasmine rice}
+			\ingredient{Fresh lime wedges}
+			\ingredient{Fresh cilantro}
+			\ingredient{Sliced red chili (optional)}
+		},
+	instructions ={
+			\instruction{Heat coconut oil in a large pot or wok over medium heat. Add curry paste and cook for 1-2 minutes, stirring constantly, until fragrant.}
+			\instruction{Pour in coconut milk and stir well to dissolve the curry paste. Bring to a gentle simmer.}
+			\instruction{Add vegetable broth, soy sauce, and brown sugar. Stir to combine.}
+			\instruction{Add eggplant and cook for 5 minutes, then add bell peppers and green beans. Simmer for 10-12 minutes until vegetables are tender but still crisp.}
+			\instruction{Stir in bamboo shoots and Thai basil. Cook for 2 more minutes.}
+			\instruction{Taste and adjust seasoning with more soy sauce, sugar, or curry paste as needed.}
+			\instruction{Serve hot over jasmine rice, garnished with fresh cilantro, lime wedges, and sliced chili if desired.}
+		}
+}
+
+
+\makeimagepage{
+	image={../images/recipes/thai-red-curry.jpg},
+	caption = {Thai Red Curry with Vegetables},
+}
+
+%----------------------------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	DESSERTS CHAPTER PAGE
+%----------------------------------------------------------------------------------------
+
+\makechapterpage{
+	title={Desserts},
+	image={../images/book/dessert.jpg},
+	layout={right}
+}
+
+
+%----------------------------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	RECIPE EXAMPLE - CHOCOLATE CAKE (Columns Layout)
+%----------------------------------------------------------------------------------------
+
+\recipe{%
+	image={../images/recipes/chocolate-cake.jpg},
+	imageheight={0.5\paperheight},
+	imageoverlayspace={0.45\paperheight},
+	title = {Decadent Chocolate Cake},
+	indexes = {Decadent Chocolate Cake, Chocolate Cake, Cake, Recipes!Desserts, Chocolate, Cocoa, Buttercream, American cuisine, Celebration cakes, Baked dishes},
+	description = {A rich, moist chocolate layer cake with smooth chocolate buttercream frosting. This showstopper is perfect for birthdays and special celebrations.},
+	serves = {12},
+	preptime = {30 mins},
+	cookingtime = {35 mins},
+	difficulty = {Advanced},
+	origin = {USA},
+	tags = {Dessert, Chocolate, Cake, Celebration},
+	extrainstructioninfo = {For best results, bring all ingredients to room temperature before starting. The cake layers can be made a day ahead, wrapped in plastic wrap, and stored at room temperature.},
+	ingredients = {
+			\ingredientsection{Cake}
+			\ingredient{2 cups all-purpose flour}
+			\ingredient{2 cups granulated sugar}
+			\ingredient{3/4 cup unsweetened cocoa powder}
+			\ingredient{2 tsp baking soda}
+			\ingredient{1 tsp baking powder}
+			\ingredient{1 tsp salt}
+			\ingredient{2 large eggs}
+			\ingredient{1 cup buttermilk}
+			\ingredient{1 cup strong black coffee, hot}
+			\ingredient{1/2 cup vegetable oil}
+			\ingredient{2 tsp vanilla extract}
+
+			\ingredientsection{Frosting}
+			\ingredient{1 cup (2 sticks) unsalted butter, softened}
+			\ingredient{3 1/2 cups powdered sugar}
+			\ingredient{1/2 cup unsweetened cocoa powder}
+			\ingredient{1/2 cup heavy cream}
+			\ingredient{2 tsp vanilla extract}
+			\ingredient{1/4 tsp salt}
+		},
+	instructions ={
+			\instructionsection{Prepare the Cake}
+			\instruction{Preheat oven to 350°F (175°C). Grease and flour two 9-inch round cake pans.}
+			\instruction{In a large bowl, whisk together flour, sugar, cocoa powder, baking soda, baking powder, and salt.}
+			\instruction{Add eggs, buttermilk, hot coffee, oil, and vanilla extract. Beat with an electric mixer on medium speed for 2 minutes. The batter will be thin.}
+			\instruction{Pour batter evenly into prepared pans. Bake for 30-35 minutes until a toothpick inserted in the center comes out clean.}
+			\instruction{Cool in pans for 10 minutes, then turn out onto wire racks to cool completely.}
+
+			\instructionsection{Make the Frosting}
+			\instruction{Beat butter with an electric mixer until creamy and smooth, about 2 minutes.}
+			\instruction{Sift together powdered sugar and cocoa powder. Gradually add to butter, alternating with heavy cream.}
+			\instruction{Add vanilla extract and salt. Beat on high speed for 3-4 minutes until light and fluffy.}
+
+			\instructionsection{Assemble}
+			\instruction{Place one cake layer on a serving plate. Spread with about 1 cup of frosting.}
+			\instruction{Top with second cake layer. Frost the top and sides of the entire cake with remaining frosting.}
+			\instruction{Refrigerate for at least 30 minutes before slicing. Bring to room temperature before serving.}
+		}
+}
+
+
+%----------------------------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	RECIPE EXAMPLE - TIRAMISU (Simple Layout, No Image)
+%----------------------------------------------------------------------------------------
+
+\makeimagepage{
+	image={../images/recipes/tiramisu.jpg},
+	caption = {Classic Tiramisu}
+}
+
+\recipe{%
+	layout={simple},
+	title = {Classic Tiramisu},
+	indexes = {Classic Tiramisu, Tiramisu, Recipes!Desserts, Coffee, Mascarpone, Ladyfingers, Italian cuisine, No-bake desserts, Make-ahead meals},
+	description = {The beloved Italian dessert with layers of coffee-soaked ladyfingers and creamy mascarpone. A make-ahead dessert that gets better as it sits.},
+	serves = {8-10},
+	preptime = {30 mins},
+	difficulty = {Intermediate},
+	origin = {Italy},
+	tags = {Italian, Dessert, Coffee, No-Bake, Make-Ahead},
+	extrainstructioninfo = {Tiramisu must be refrigerated for at least 4 hours, but overnight is best. This allows the flavors to meld and the ladyfingers to soften perfectly. Use high-quality espresso or strong coffee for the best flavor.},
+	ingredients = {
+			\ingredientsection{Cream Layer}
+			\ingredient{6 large egg yolks}
+			\ingredient{3/4 cup granulated sugar}
+			\ingredient{1 1/3 cups mascarpone cheese, room temperature}
+			\ingredient{2 cups heavy cream, cold}
+
+			\ingredientsection{Coffee Layer}
+			\ingredient{2 cups strong espresso or coffee, cooled}
+			\ingredient{3 tbsp coffee liqueur (optional)}
+			\ingredient{40-48 ladyfinger cookies (savoiardi)}
+
+			\ingredientsection{Topping}
+			\ingredient{2 tbsp unsweetened cocoa powder}
+			\ingredient{Dark chocolate shavings (optional)}
+		},
+	instructions ={
+			\instruction{Whisk egg yolks and sugar in a heatproof bowl. Place over a pot of simmering water (double boiler method) and whisk constantly for 8-10 minutes until thick and pale. Remove from heat and let cool slightly.}
+			\instruction{Add mascarpone to the egg mixture and whisk until smooth and well combined. Set aside.}
+			\instruction{In a separate bowl, whip heavy cream until stiff peaks form. Gently fold the whipped cream into the mascarpone mixture in three additions.}
+			\instruction{Combine cooled espresso with coffee liqueur (if using) in a shallow dish.}
+			\instruction{Quickly dip each ladyfinger into the coffee mixture (about 2 seconds per side) and arrange in a single layer in a 9x13 inch dish.}
+			\instruction{Spread half of the mascarpone cream over the ladyfingers. Repeat with another layer of dipped ladyfingers and remaining cream.}
+			\instruction{Cover with plastic wrap and refrigerate for at least 4 hours or overnight.}
+			\instruction{Before serving, dust generously with cocoa powder and garnish with chocolate shavings if desired.}
+		}
+}
+
+
+%----------------------------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	RECIPE EXAMPLE - APPLE PIE (Columns Layout with Image, Multiple Sections)
+%----------------------------------------------------------------------------------------
+
+\recipe{%
+	title = {Classic Apple Pie},
+	indexes = {Classic Apple Pie, Apple Pie, Pie, Recipes!Desserts, Apples, Cinnamon, Pastry, American cuisine, Fall recipes, Baked dishes},
+	description = {A traditional American apple pie with flaky, buttery crust and perfectly spiced apple filling. This is comfort food at its finest.},
+	serves = {8},
+	preptime = {45 mins},
+	cookingtime = {55 mins},
+	difficulty = {Advanced},
+	origin = {USA},
+	tags = {Dessert, Pie, American, Fall, Baked},
+	extrainstructioninfo = {For the flakiest crust, make sure all ingredients are cold and handle the dough as little as possible. The pie can be made a day ahead and reheated before serving.},
+	ingredients = {
+			\ingredientsection{Pie Crust}
+			\ingredient{2 1/2 cups all-purpose flour}
+			\ingredient{1 tsp salt}
+			\ingredient{1 tbsp granulated sugar}
+			\ingredient{1 cup (2 sticks) cold unsalted butter, cubed}
+			\ingredient{6-8 tbsp ice water}
+
+			\ingredientsection{Apple Filling}
+			\ingredient{6-7 cups sliced apples (Granny Smith and Honeycrisp mix)}
+			\ingredient{2/3 cup granulated sugar}
+			\ingredient{1/4 cup all-purpose flour}
+			\ingredient{1 tsp ground cinnamon}
+			\ingredient{1/4 tsp ground nutmeg}
+			\ingredient{1/4 tsp salt}
+			\ingredient{2 tbsp lemon juice}
+			\ingredient{2 tbsp butter, cut into small pieces}
+
+			\ingredientsection{Topping}
+			\ingredient{1 egg, beaten (for egg wash)}
+			\ingredient{1 tbsp coarse sugar}
+		},
+	instructions ={
+			\instructionsection{Make the Crust}
+			\instruction{Pulse flour, salt, and sugar in a food processor. Add cold butter and pulse until mixture resembles coarse crumbs.}
+			\instruction{Add ice water 1 tablespoon at a time, pulsing after each addition, until dough just comes together.}
+			\instruction{Divide dough in half, shape into disks, wrap in plastic, and refrigerate for at least 1 hour.}
+
+			\instructionsection{Prepare the Filling}
+			\instruction{Preheat oven to 425°F (220°C). In a large bowl, toss sliced apples with sugar, flour, cinnamon, nutmeg, salt, and lemon juice.}
+
+			\instructionsection{Assemble and Bake}
+			\instruction{Roll out one disk of dough on a floured surface to 12 inches diameter. Transfer to a 9-inch pie plate.}
+			\instruction{Pour apple filling into crust and dot with butter pieces. Roll out second disk of dough and place over filling. Trim excess and crimp edges to seal.}
+			\instruction{Cut several slits in top crust for venting. Brush with egg wash and sprinkle with coarse sugar.}
+			\instruction{Place pie on a baking sheet. Bake for 20 minutes, then reduce heat to 375°F (190°C) and bake for 35-40 minutes more until crust is golden and filling is bubbling.}
+			\instruction{Cool on a wire rack for at least 2 hours before slicing. Serve warm or at room temperature with vanilla ice cream.}
+		}
+}
+
+
+\makeimagepage{
+	image={../images/recipes/apple-pie.jpg},
+	caption = {Classic Apple Pie}
+}
+
+%----------------------------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	CONVERSION TABLE
+%----------------------------------------------------------------------------------------
+
+\makeconversionpage{
+	title={Conversion Tables}
+}
+
+%----------------------------------------------------------------------------------------
+%	INDEX
+%----------------------------------------------------------------------------------------
+
+\printindex
+
+%----------------------------------------------------------------------------------------
+%	BACK COVER
+%----------------------------------------------------------------------------------------
+
+\makebackcoverpage{
+	topcontent={
+		{\fontsize{24pt}{28pt}\sourcesanspro\bfseries\selectfont\color{white}\MakeUppercase{About This Book}}\par
+		\vspace{0.02\textheight}
+		This cookbook represents a collection of cherished recipes passed down through generations, each one telling a story of family gatherings, holiday celebrations, and everyday moments made special by the food we share. From simple comfort foods to elaborate feasts, these recipes have been tested, refined, and perfected over countless meals.\newline\newline
+		Whether you're a seasoned cook or just beginning your culinary journey, we hope these recipes bring joy, inspiration, and delicious results to your kitchen.
+	},
+	image={../images/book/back-cover.jpg},
+	imageopacity={0.8},
+	imageposition={right},
+	columnratio={0.5,0.5},
+	verticalsplit={0.5},
+	bottomcontent={
+		\textbf{From Our Kitchen to Yours:}\par
+		\vspace{0.01\textheight}
+		Start your morning right with our fluffy \textbf{Banana Pancakes}—a family favorite that's both simple and satisfying. For a special weekend treat, you simply must try our \textbf{Classic French Toast}, golden and perfectly crisp.\newline\newline
+		When it comes to main courses, our \textbf{Spaghetti Bolognese} has been a Sunday dinner tradition for decades, while the \textbf{Lemon Herb Grilled Salmon} brings elegance to any weeknight meal. And don't miss our family's favorite dessert—the \textbf{Classic Tiramisu} that has graced countless celebrations and always leaves guests asking for the recipe.\newline\newline
+		\textit{Each recipe includes detailed instructions, ingredient lists, and helpful tips to ensure your success in the kitchen.}
+	},
+	isbn={978-0-123456-78-9},
+	publisher={Published by Your Publisher Name},
+	copyright={© 2025 All rights reserved.},
+	textcolor={white},
+	bgcolor={darkgrey},
+	divider={true},
+	barcodeplaceholder={true}
+}
+
+\end{document}

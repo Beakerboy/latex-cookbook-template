@@ -1,0 +1,35 @@
+name: Build on Pull Request
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  build-pr:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install LaTeX and LuaLaTeX dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-latex-extra texlive-fonts-extra texlive-luatex texlive-lang-french latexmk fonts-noto-color-emoji
+
+      - name: Build PDF
+        run: |
+          chmod +x build.sh
+          ./build.sh
+
+      - name: Upload PDF artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: cookbook-pdfs-pr-${{ github.event.pull_request.number }}
+          path: dist/*.pdf
+          retention-days: 7
+          if-no-files-found: error
+
