@@ -18,6 +18,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Only effective when `fullpage=true`; automatically set to `false` when `fullpage=false`
   - Useful for adding compact recipes after long full-page recipes that span multiple pages
 
+### Fixed
+
+- Fixed recipenote counter not persisting between ingredients and instructions sections
+
 ## [1.2.0] - 2025-11-19
 
 ### Added

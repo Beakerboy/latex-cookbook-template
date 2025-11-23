@@ -905,6 +905,8 @@
 
 % Counter for recipe notes (resets per recipe)
 \newcounter{recipenote}
+% Make the counter global
+\globalcounter{recipenote}
 % Token list to store all notes for the current recipe
 \newtoks\recipe@notestoks
 % Initialize empty token list
@@ -914,8 +916,8 @@
 % Usage: \ingredient{2 cups flour\note{Use all-purpose flour for best results}}
 %        \instruction{Mix ingredients\note{Be careful not to overmix}}
 \NewDocumentCommand{\note}{m}{%
-	% Increment the note counter
-	\stepcounter{recipenote}%
+	% Increment the note counter globally to persist across environments
+	\global\advance\c@recipenote by 1\relax
 	% Store the note text (label will be added by enumerate environment)
 	% Append item and note text to token list
 	% Only protect the note text from expansion; \item and \par should be stored as tokens
