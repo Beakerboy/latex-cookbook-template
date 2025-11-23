@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0] - 2025-11-23
+
+### Added
+
+- Recipe `fullpage` option to control whether recipes take a full page or can flow naturally
+  - When `fullpage=true` (default): Recipes display images and clear the page after completion
+  - When `fullpage=false`: Recipes do not display images and do not force a page break, allowing compact recipes to appear on the same page or flow naturally
+- Recipe `clearpageafter` option to control page breaks after recipes
+  - When `clearpageafter=true` (default): Forces a page break after the recipe
+  - When `clearpageafter=false`: No page break after the recipe, allowing content to flow naturally
+  - Only effective when `fullpage=true`; automatically set to `false` when `fullpage=false`
+  - Useful for adding compact recipes after long full-page recipes that span multiple pages
+
 ## [1.2.0] - 2025-11-19
 
 ### Added
@@ -80,6 +93,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Build automation with included shell script
 - Comprehensive documentation with usage examples
 
+[1.3.0]: https://github.com/AshDevFr/latex-cookbook-template/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/AshDevFr/latex-cookbook-template/compare/v1.1.1...v1.2.0
 [1.1.1]: https://github.com/AshDevFr/latex-cookbook-template/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/AshDevFr/latex-cookbook-template/compare/v1.0.0...v1.1.0

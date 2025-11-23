@@ -3,8 +3,8 @@
 %   LaTeX Class File
 %----------------------------------------------------------------------------------------
 %
-%   Version:     1.2.0
-%   Date:        November 19, 2025
+%   Version:     1.3.0
+%   Date:        November 23, 2025
 %   Author:      AshDevFr
 %   GitHub:      @AshDevFr
 %   License:     CC BY-NC-SA 4.0
@@ -1641,6 +1641,34 @@
 \define@key{recipe}{indexes}{\def\recipe@indexes{#1}}
 \define@key{recipe}{ingredientitemsep}{\def\recipe@ingredientitemsep{#1}}
 \define@key{recipe}{instructionitemsep}{\def\recipe@instructionitemsep{#1}}
+\define@key{recipe}{fullpage}{%
+	\ifdefstring{#1}{true}{%
+		\recipe@fullpagetrue
+	}{%
+		\recipe@fullpagefalse
+		\recipe@clearpageafterfalse
+	}%
+}
+\define@key{recipe}{clearpageafter}{%
+	\ifdefstring{#1}{true}{%
+		\ifrecipe@fullpage{%
+			\recipe@clearpageaftertrue
+		}{%
+			\recipe@clearpageafterfalse
+		}%
+	}{%
+		\recipe@clearpageafterfalse
+	}%
+}
+
+% Boolean flag for clear page after recipe
+% Default to true
+% Will be set to false if fullpage is false
+% This allows adding a small recipe after a full-page recipe that spans multiple pages
+\newif\ifrecipe@clearpageafter
+
+% Boolean flag for full page recipe
+\newif\ifrecipe@fullpage
 
 % Initialize defaults for recipe properties
 \NewDocumentCommand{\recipe@init}{}{%
@@ -1670,6 +1698,8 @@
 	\def\recipe@indexes{}% Default empty indexes
 	\def\recipe@ingredientitemsep{\cookbook@ingredientitemsep}% Default to global ingredient item spacing
 	\def\recipe@instructionitemsep{\cookbook@instructionitemsep}% Default to global instruction item spacing
+	\recipe@fullpagetrue% Default to full page recipe
+	\recipe@clearpageaftertrue% Default to clear page after recipe
 }
 
 % Boolean flag for tag duplicate checking
@@ -1762,7 +1792,9 @@
 	% - Coordinate calculations: Uses calc library to position image precisely
 	%
 	% The \vspace* ensures content starts below the image overlay area.
-	\ifx\recipe@image\@empty\else
+	% Only show images if fullpage is enabled
+	\ifrecipe@fullpage
+		\ifx\recipe@image\@empty\else
 		\ifdefstring{\recipe@imageposition}{top}{%
 			\begin{tikzpicture}[remember picture, overlay]
 				\begin{scope}
@@ -1787,6 +1819,7 @@
 			% Add vertical space after the image before content begins
 			\vspace*{\dimexpr\recipe@imageoverlayspace - \cookbook@scaledbleedremainder\relax}
 		}{}%
+		\fi
 	\fi
 
 	% Output the recipe header
@@ -1809,7 +1842,9 @@
 	% Similar to top positioning but places image at bottom.
 	% The clip rectangle extends below the page edge to ensure full coverage,
 	% and the image is positioned from the bottom edge upward.
-	\ifx\recipe@image\@empty\else
+	% Only show images if fullpage is enabled
+	\ifrecipe@fullpage
+		\ifx\recipe@image\@empty\else
 		\ifdefstring{\recipe@imageposition}{bottom}{%
 			\begin{tikzpicture}[remember picture, overlay]
 				\begin{scope}
@@ -1831,12 +1866,16 @@
 				\end{scope}
 			\end{tikzpicture}
 		}{}%
+		\fi
 	\fi
 
 	% Output recipe notes at the bottom (if any)
 	\recipe@outputnotes
 
-	\clearpage
+	% Only clear page if clear page after recipe is enabled
+	\ifrecipe@clearpageafter
+		\clearpage
+	\fi
 }
 
 % Two-column recipe layout with synchronized columns

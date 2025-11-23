@@ -481,6 +481,8 @@ The `\recipe{}` command is the heart of the template, supporting extensive custo
 \recipe{
     % Layout
     layout={columns},                   % 'columns' or 'simple' (default: columns)
+    fullpage={true},                    % 'true' or 'false' (default: true)
+    clearpageafter={true},              % 'true' or 'false' (default: true, only effective when fullpage=true)
 
     % Image
     image={path/to/image.jpg},          % Recipe header image
@@ -563,6 +565,71 @@ Alternative single-column layout:
     % ...
 }
 ```
+
+#### Full Page Option
+
+Control whether recipes take a full page or can flow naturally:
+
+- **`fullpage={true}`** (default): Recipe displays images (if provided) and clears the page after completion, ensuring each recipe starts on a new page
+- **`fullpage={false}`**: Recipe does not display images and does not force a page break, allowing compact recipes to appear on the same page or flow naturally
+
+**Clear Page After Option:**
+
+The `clearpageafter` option controls whether a page break is forced after the recipe:
+
+- **`clearpageafter={true}`** (default): Forces a page break after the recipe
+- **`clearpageafter={false}`**: No page break after the recipe, allowing content to flow naturally
+
+**Important:** `clearpageafter` only takes effect when `fullpage={true}`. When `fullpage={false}`, `clearpageafter` is automatically set to `false` and cannot be overridden.
+
+**Use Cases:**
+
+- **Full page recipes** (`fullpage={true}`): Best for featured recipes with images that deserve their own page
+- **Full page recipes without forced break** (`fullpage={true}`, `clearpageafter={false}`): For long recipes that span multiple pages, allowing you to add a compact recipe on the same page after the full-page recipe completes
+- **Compact recipes** (`fullpage={false}`): Perfect for short recipes that can share a page, or when you want recipes to flow naturally without forced page breaks
+
+**Example - Full Page Recipe (Default):**
+
+```latex
+\recipe{
+    fullpage={true},  % or omit (it's the default)
+    clearpageafter={true},  % or omit (it's the default)
+    image={images/recipes/bolognese.jpg},
+    title={Spaghetti Bolognese},
+    % ... recipe content
+}
+```
+
+**Example - Full Page Recipe Without Forced Break:**
+
+```latex
+\recipe{
+    fullpage={true},
+    clearpageafter={false},  % Allow content to flow after this recipe
+    image={images/recipes/complex-recipe.jpg},
+    title={Complex Multi-Page Recipe},
+    % ... long recipe content that spans multiple pages
+}
+
+% This compact recipe can appear on the same page after the previous recipe
+\recipe{
+    fullpage={false},
+    title={Quick Scrambled Eggs},
+    % ... recipe content
+}
+```
+
+**Example - Compact Recipe:**
+
+```latex
+\recipe{
+    fullpage={false},
+    title={Quick Scrambled Eggs},
+    % ... recipe content (no images will be displayed)
+}
+```
+
+**Note:** When `fullpage={false}`, recipe images are not displayed regardless of the `image` parameter. This allows you to create compact recipe collections where multiple short recipes can appear on the same page.
 
 ---
 
