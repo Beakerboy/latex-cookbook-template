@@ -141,6 +141,10 @@ For a list of changes and version history, see [CHANGELOG.md](CHANGELOG.md).
     <td><img src="images/samples/cookbook-sample_10-11.png" alt="Recipe with Image"/></td>
     <td><img src="images/samples/cookbook-sample_14-15.png" alt="Simple Layout"/></td>
   </tr>
+  <tr>
+    <td><img src="images/samples/cookbook-sample_24-25.png" alt="Multi-page Recipe"/></td>
+    <td><img src="images/samples/cookbook-sample_30-31.png" alt=Compact Recipe"/></td>
+  </tr>
 </table>
 
 <details>
@@ -151,7 +155,7 @@ For a list of changes and version history, see [CHANGELOG.md](CHANGELOG.md).
 <table>
   <tr>
     <td><img src="images/samples/cookbook-sample_1.png" alt="Front Cover"/></td>
-    <td><img src="images/samples/cookbook-sample_34.png" alt="Back Cover"/></td>
+    <td><img src="images/samples/cookbook-sample_36.png" alt="Back Cover"/></td>
   </tr>
 </table>
 
@@ -161,8 +165,8 @@ The template supports conversion tables and index pages.
 
 <table>
   <tr>
-    <td><img src="images/samples/cookbook-sample_30-31.png" alt="Conversion Table"/></td>
-    <td><img src="images/samples/cookbook-sample_32.png" alt="Index"/></td>
+    <td><img src="images/samples/cookbook-sample_32-33.png" alt="Conversion Table"/></td>
+    <td><img src="images/samples/cookbook-sample_34.png" alt="Index"/></td>
   </tr>
 </table>
 

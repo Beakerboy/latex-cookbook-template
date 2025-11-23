@@ -3,8 +3,8 @@
 %   LaTeX Sample File
 %----------------------------------------------------------------------------------------
 %
-%   Version:     1.2.0
-%   Date:        November 19, 2025
+%   Version:     1.3.0
+%   Date:        November 23, 2025
 %   Author:      AshDevFr
 %   GitHub:      @AshDevFr
 %   License:     CC BY-NC-SA 4.0
@@ -742,6 +742,90 @@ instructions ={
 }
 
 %----------------------------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	RECIPE EXAMPLE - CHOCOLATE CHIP COOKIES (Non-full page, No Image)
+%----------------------------------------------------------------------------------------
+
+\recipe{%
+	fullpage=false,
+	title = {Cookies aux Pépites de Chocolat},
+	indexes = {Cookies aux Pépites de Chocolat, Cookies, Recettes!Desserts, Chocolat, Recettes rapides, Plats cuits au four},
+	description = {Des cookies aux pépites de chocolat simples et classiques, croustillants sur les bords et moelleux au centre. Parfaits pour toute occasion.},
+	serves = {24},
+	preptime = {15 min},
+	cookingtime = {10 min},
+	difficulty = {Débutant},
+	origin = {États-Unis},
+	tags = {Dessert, Cookies, Rapide, Cuit au four},
+	ingredients = {
+		\ingredient{2 1/4 tasses de farine tout usage}
+		\ingredient{1 c. à café de bicarbonate de soude}
+		\ingredient{1 c. à café de sel}
+		\ingredient{1 tasse (2 bâtons) de beurre, ramolli}
+		\ingredient{3/4 tasse de sucre blanc}
+		\ingredient{3/4 tasse de cassonade tassée}
+		\ingredient{2 gros œufs}
+		\ingredient{2 c. à café d'extrait de vanille}
+		\ingredient{2 tasses de pépites de chocolat}
+	},
+	instructions ={
+		\instruction{Préchauffer le four à 190°C.}
+		\instruction{Dans un petit bol, mélanger la farine, le bicarbonate de soude et le sel. Mettre de côté.}
+		\instruction{Dans un grand bol, battre le beurre, le sucre blanc et la cassonade jusqu'à obtenir une consistance crémeuse.}
+		\instruction{Ajouter les œufs et l'extrait de vanille, en battant bien.}
+		\instruction{Incorporer progressivement le mélange de farine. Ajouter les pépites de chocolat.}
+		\instruction{Déposer des cuillerées arrondies sur des plaques de cuisson non graissées.}
+		\instruction{Cuire pendant 9 à 11 minutes ou jusqu'à ce qu'ils soient dorés. Laisser refroidir sur les plaques pendant 2 minutes avant de transférer sur une grille.}
+	}
+}
+
+%----------------------------------------------------------------------------------------------------------
+
+\vspace*{0.01\textheight}
+\begin{center}
+	\rule{100pt}{0.5pt}
+\end{center}
+\vspace*{0.002\textheight}
+
+%----------------------------------------------------------------------------------------
+%	RECIPE EXAMPLE - LEMONADE (Non-full page, No Image)
+%----------------------------------------------------------------------------------------
+
+\recipe{%
+	fullpage=false,
+	layout={simple},
+	title = {Limonade Fraîche},
+	indexes = {Limonade Fraîche, Limonade, Boissons, Recettes!Desserts, Citron, Recettes sans cuisson, Boissons rafraîchissantes},
+	description = {Une limonade maison rafraîchissante, parfaitement sucrée et acidulée. Idéale pour les journées chaudes d'été.},
+	serves = {6},
+	preptime = {10 min},
+	difficulty = {Débutant},
+	origin = {Contemporain},
+	tags = {Boisson, Sans cuisson, Rapide, Rafraîchissant},
+	ingredients = {
+		\ingredient{1 tasse de jus de citron frais (environ 6-8 citrons)}
+		\ingredient{1 tasse de sucre blanc}
+		\ingredient{5 tasses d'eau froide}
+		\ingredient{Glaçons}
+		\ingredient{Tranches de citron pour la décoration (optionnel)}
+	},
+	instructions ={
+		\instruction{Dans une petite casserole, combiner le sucre et 1 tasse d'eau. Chauffer à feu moyen, en remuant jusqu'à ce que le sucre soit complètement dissous. Retirer du feu et laisser refroidir.}
+		\instruction{Dans une grande carafe, combiner le sirop de sucre refroidi, le jus de citron frais et les 4 tasses d'eau froide restantes.}
+		\instruction{Mélanger bien et réfrigérer jusqu'à refroidissement, ou servir immédiatement sur glace.}
+		\instruction{Décorer avec des tranches de citron si désiré. Ajuster la douceur en ajoutant plus de sucre ou d'eau selon le goût.}
+	}
+}
+
+%----------------------------------------------------------------------------------------------------------
+
+\clearpage
+
+\makeimagepage{
+	image={../images/recipes/chocolate-chip-cookies.jpg},
+	caption = {Cookies aux Pépites de Chocolat}
+}
 
 %----------------------------------------------------------------------------------------
 %	TABLE DE CONVERSION
