@@ -1,0 +1,6 @@
+dist/
+tmp/
+.github/
+.vscode/
+.git/
+.gitignore

@@ -48,6 +48,26 @@ cd latex-cookbook-template
 
 Your PDF will be generated in the `dist/` directory.
 
+### Docker Build (Alternative)
+
+If you prefer to build in a controlled environment using Docker:
+
+1. Build and run with Docker Compose:
+
+```bash
+docker compose run --rm build
+```
+
+2. For more build options (verbose mode, force clean build):
+
+```bash
+docker compose run --rm build ./build.sh -v    # Verbose mode
+docker compose run --rm build ./build.sh -f    # Force clean build
+docker compose run --rm build ./build.sh -v -f  # Both options
+```
+
+The Docker setup uses the same dependencies as the CI environment, ensuring consistent builds across different systems.
+
 ### Basic Usage
 
 ```latex
@@ -189,6 +209,8 @@ The template supports print production with bleed margins.
 latex-cookbook-template/
 ├── cookbook.cls              # Main LaTeX class file
 ├── build.sh                  # Build script for compilation
+├── Dockerfile                # Docker configuration for controlled builds
+├── docker-compose.yml        # Docker Compose configuration
 ├── README.md                 # This file
 ├── DOCUMENTATION.md          # Comprehensive documentation
 ├── samples/                  # Example cookbook files

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Family Cookbook Build Script
+# Cookbook Samples Build Script
 # Compiles all LaTeX documents in the samples directory and places PDFs in the dist directory
 # Usage: ./build.sh [-v] [-f]
 #   -v: Verbose mode (show all latexmk output)
@@ -29,7 +29,7 @@ done
 # If force is true, remove the tmp and dist directories
 if [ "$FORCE" = true ]; then
     echo "Force mode: removing dist directory"
-    rm -rf dist
+    rm -rf dist/*.pdf
 fi
 
 # Clean up existing build files on the root directory
@@ -76,7 +76,7 @@ for TEX_FILE in "${TEX_FILES[@]}"; do
     #If force is true, remove the tmp directory to prevent issues with previous builds
     if [ "$FORCE" = true ]; then
         echo "Force mode: removing tmp directory to prevent issues with previous builds"
-        rm -rf tmp
+        rm -rf tmp/*
     fi
 
     # Get the base name without extension

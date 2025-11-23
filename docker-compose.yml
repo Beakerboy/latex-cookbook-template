@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  build:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: latex-cookbook-builder
+    volumes:
+      # Mount the project directory to preserve changes
+      - .:/workspace:ro
+      # Mount dist directory to persist generated PDFs
+      - ./dist:/workspace/dist
+      # Mount tmp directory for build artifacts (optional, can be excluded for clean builds)
+      - ./tmp:/workspace/tmp
+    working_dir: /workspace
+    # Override command to allow passing arguments to build.sh
+    command: ["./build.sh"]
+    # Uncomment the line below to run in verbose mode
+    # command: ["./build.sh", "-v"]
+    # Uncomment the line below to run in force mode (clean build)
+    # command: ["./build.sh", "-f"]
+    # Uncomment the line below to run in both verbose and force mode
+    # command: ["./build.sh", "-v", "-f"]
+
